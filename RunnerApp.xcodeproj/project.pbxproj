@@ -14,6 +14,24 @@
 		8250F7381A6A5AB1007962C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8250F7371A6A5AB1007962C3 /* Images.xcassets */; };
 		8250F73B1A6A5AB1007962C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */; };
 		8250F7471A6A5AB1007962C3 /* RunnerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7461A6A5AB1007962C3 /* RunnerAppTests.swift */; };
+		8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7501A6A5AFB007962C3 /* LocationController.swift */; };
+		8250F7521A6A5AFB007962C3 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7501A6A5AFB007962C3 /* LocationController.swift */; };
+		8250F7541A6B4810007962C3 /* RunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7531A6B480F007962C3 /* RunController.swift */; };
+		8250F7551A6B4810007962C3 /* RunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7531A6B480F007962C3 /* RunController.swift */; };
+		82EBFD4F1A6B620200AC002F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD4E1A6B620200AC002F /* Location.swift */; };
+		82EBFD501A6B620200AC002F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD4E1A6B620200AC002F /* Location.swift */; };
+		82EBFD521A6B620300AC002F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD511A6B620300AC002F /* Run.swift */; };
+		82EBFD531A6B620300AC002F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD511A6B620300AC002F /* Run.swift */; };
+		82EBFD541A6B64F000AC002F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
+		82EBFD5C1A6BF0F000AC002F /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EBFD5B1A6BF0F000AC002F /* WatchKit.framework */; };
+		82EBFD621A6BF0F100AC002F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD611A6BF0F100AC002F /* InterfaceController.swift */; };
+		82EBFD641A6BF0F100AC002F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD631A6BF0F100AC002F /* NotificationController.swift */; };
+		82EBFD661A6BF0F100AC002F /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD651A6BF0F100AC002F /* GlanceController.swift */; };
+		82EBFD681A6BF0F100AC002F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EBFD671A6BF0F100AC002F /* Images.xcassets */; };
+		82EBFD6C1A6BF0F100AC002F /* RunnerApp Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = 82EBFD6B1A6BF0F100AC002F /* RunnerApp Watch App.app */; };
+		82EBFD731A6BF0F100AC002F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EBFD721A6BF0F100AC002F /* Interface.storyboard */; };
+		82EBFD751A6BF0F100AC002F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EBFD741A6BF0F100AC002F /* Images.xcassets */; };
+		82EBFD781A6BF0F100AC002F /* RunnerApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 82EBFD591A6BF0F000AC002F /* RunnerApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +42,35 @@
 			remoteGlobalIDString = 8250F7271A6A5AB1007962C3;
 			remoteInfo = RunnerApp;
 		};
+		82EBFD6D1A6BF0F100AC002F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8250F7201A6A5AB1007962C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82EBFD6A1A6BF0F100AC002F;
+			remoteInfo = "RunnerApp Watch App";
+		};
+		82EBFD761A6BF0F100AC002F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8250F7201A6A5AB1007962C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82EBFD581A6BF0F000AC002F;
+			remoteInfo = "RunnerApp WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82EBFD7F1A6BF0F100AC002F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				82EBFD781A6BF0F100AC002F /* RunnerApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +84,25 @@
 		8250F7401A6A5AB1007962C3 /* RunnerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F7451A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8250F7461A6A5AB1007962C3 /* RunnerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerAppTests.swift; sourceTree = "<group>"; };
+		8250F7501A6A5AFB007962C3 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		8250F7531A6B480F007962C3 /* RunController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunController.swift; sourceTree = "<group>"; };
+		8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		82EBFD4E1A6B620200AC002F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		82EBFD511A6B620300AC002F /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		82EBFD591A6BF0F000AC002F /* RunnerApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RunnerApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EBFD5B1A6BF0F000AC002F /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		82EBFD5F1A6BF0F000AC002F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82EBFD601A6BF0F000AC002F /* PushNotificationPayload.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PushNotificationPayload.json; sourceTree = "<group>"; };
+		82EBFD611A6BF0F100AC002F /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		82EBFD631A6BF0F100AC002F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		82EBFD651A6BF0F100AC002F /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		82EBFD671A6BF0F100AC002F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		82EBFD6B1A6BF0F100AC002F /* RunnerApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RunnerApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82EBFD711A6BF0F100AC002F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82EBFD721A6BF0F100AC002F /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		82EBFD741A6BF0F100AC002F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		82EBFD801A6BF78D00AC002F /* RunnerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RunnerApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,14 +120,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		82EBFD561A6BF0F000AC002F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82EBFD5C1A6BF0F000AC002F /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8250F71F1A6A5AB1007962C3 = {
 			isa = PBXGroup;
 			children = (
+				82EBFD511A6B620300AC002F /* Run.swift */,
+				82EBFD4E1A6B620200AC002F /* Location.swift */,
 				8250F72A1A6A5AB1007962C3 /* RunnerApp */,
 				8250F7431A6A5AB1007962C3 /* RunnerAppTests */,
+				82EBFD5D1A6BF0F000AC002F /* RunnerApp WatchKit Extension */,
+				82EBFD6F1A6BF0F100AC002F /* RunnerApp Watch App */,
+				82EBFD5A1A6BF0F000AC002F /* Frameworks */,
 				8250F7291A6A5AB1007962C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +150,8 @@
 			children = (
 				8250F7281A6A5AB1007962C3 /* RunnerApp.app */,
 				8250F7401A6A5AB1007962C3 /* RunnerAppTests.xctest */,
+				82EBFD591A6BF0F000AC002F /* RunnerApp WatchKit Extension.appex */,
+				82EBFD6B1A6BF0F100AC002F /* RunnerApp Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,13 +159,18 @@
 		8250F72A1A6A5AB1007962C3 /* RunnerApp */ = {
 			isa = PBXGroup;
 			children = (
+				82EBFD801A6BF78D00AC002F /* RunnerApp.entitlements */,
 				8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */,
+				8250F7501A6A5AFB007962C3 /* LocationController.swift */,
 				8250F7321A6A5AB1007962C3 /* ViewController.swift */,
+				8250F7531A6B480F007962C3 /* RunController.swift */,
 				8250F7341A6A5AB1007962C3 /* Main.storyboard */,
 				8250F7371A6A5AB1007962C3 /* Images.xcassets */,
 				8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */,
 				8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */,
 				8250F72B1A6A5AB1007962C3 /* Supporting Files */,
+				8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */,
+				8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */,
 			);
 			path = RunnerApp;
 			sourceTree = "<group>";
@@ -115,6 +200,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		82EBFD5A1A6BF0F000AC002F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82EBFD5B1A6BF0F000AC002F /* WatchKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82EBFD5D1A6BF0F000AC002F /* RunnerApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				82EBFD611A6BF0F100AC002F /* InterfaceController.swift */,
+				82EBFD631A6BF0F100AC002F /* NotificationController.swift */,
+				82EBFD651A6BF0F100AC002F /* GlanceController.swift */,
+				82EBFD671A6BF0F100AC002F /* Images.xcassets */,
+				82EBFD5E1A6BF0F000AC002F /* Supporting Files */,
+			);
+			path = "RunnerApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		82EBFD5E1A6BF0F000AC002F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82EBFD5F1A6BF0F000AC002F /* Info.plist */,
+				82EBFD601A6BF0F000AC002F /* PushNotificationPayload.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82EBFD6F1A6BF0F100AC002F /* RunnerApp Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				82EBFD721A6BF0F100AC002F /* Interface.storyboard */,
+				82EBFD741A6BF0F100AC002F /* Images.xcassets */,
+				82EBFD701A6BF0F100AC002F /* Supporting Files */,
+			);
+			path = "RunnerApp Watch App";
+			sourceTree = "<group>";
+		};
+		82EBFD701A6BF0F100AC002F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82EBFD711A6BF0F100AC002F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,10 +257,12 @@
 				8250F7241A6A5AB1007962C3 /* Sources */,
 				8250F7251A6A5AB1007962C3 /* Frameworks */,
 				8250F7261A6A5AB1007962C3 /* Resources */,
+				82EBFD7F1A6BF0F100AC002F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				82EBFD771A6BF0F100AC002F /* PBXTargetDependency */,
 			);
 			name = RunnerApp;
 			productName = RunnerApp;
@@ -153,6 +287,39 @@
 			productReference = 8250F7401A6A5AB1007962C3 /* RunnerAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		82EBFD581A6BF0F000AC002F /* RunnerApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82EBFD7C1A6BF0F100AC002F /* Build configuration list for PBXNativeTarget "RunnerApp WatchKit Extension" */;
+			buildPhases = (
+				82EBFD551A6BF0F000AC002F /* Sources */,
+				82EBFD561A6BF0F000AC002F /* Frameworks */,
+				82EBFD571A6BF0F000AC002F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82EBFD6E1A6BF0F100AC002F /* PBXTargetDependency */,
+			);
+			name = "RunnerApp WatchKit Extension";
+			productName = "RunnerApp WatchKit Extension";
+			productReference = 82EBFD591A6BF0F000AC002F /* RunnerApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		82EBFD6A1A6BF0F100AC002F /* RunnerApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82EBFD791A6BF0F100AC002F /* Build configuration list for PBXNativeTarget "RunnerApp Watch App" */;
+			buildPhases = (
+				82EBFD691A6BF0F100AC002F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RunnerApp Watch App";
+			productName = "RunnerApp Watch App";
+			productReference = 82EBFD6B1A6BF0F100AC002F /* RunnerApp Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,10 +331,22 @@
 				TargetAttributes = {
 					8250F7271A6A5AB1007962C3 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8KV53E363M;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8250F73F1A6A5AB1007962C3 = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 8250F7271A6A5AB1007962C3;
+					};
+					82EBFD581A6BF0F000AC002F = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					82EBFD6A1A6BF0F100AC002F = {
+						CreatedOnToolsVersion = 6.2;
 					};
 				};
 			};
@@ -186,6 +365,8 @@
 			targets = (
 				8250F7271A6A5AB1007962C3 /* RunnerApp */,
 				8250F73F1A6A5AB1007962C3 /* RunnerAppTests */,
+				82EBFD581A6BF0F000AC002F /* RunnerApp WatchKit Extension */,
+				82EBFD6A1A6BF0F100AC002F /* RunnerApp Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +389,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		82EBFD571A6BF0F000AC002F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82EBFD681A6BF0F100AC002F /* Images.xcassets in Resources */,
+				82EBFD6C1A6BF0F100AC002F /* RunnerApp Watch App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82EBFD691A6BF0F100AC002F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82EBFD731A6BF0F100AC002F /* Interface.storyboard in Resources */,
+				82EBFD751A6BF0F100AC002F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,8 +414,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8250F7541A6B4810007962C3 /* RunController.swift in Sources */,
+				8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */,
 				8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */,
 				8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */,
+				82EBFD4F1A6B620200AC002F /* Location.swift in Sources */,
+				82EBFD521A6B620300AC002F /* Run.swift in Sources */,
 				8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +428,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EBFD541A6B64F000AC002F /* AppDelegate.swift in Sources */,
+				8250F7551A6B4810007962C3 /* RunController.swift in Sources */,
+				8250F7521A6A5AFB007962C3 /* LocationController.swift in Sources */,
+				82EBFD501A6B620200AC002F /* Location.swift in Sources */,
+				82EBFD531A6B620300AC002F /* Run.swift in Sources */,
 				8250F7471A6A5AB1007962C3 /* RunnerAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82EBFD551A6BF0F000AC002F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82EBFD641A6BF0F100AC002F /* NotificationController.swift in Sources */,
+				82EBFD621A6BF0F100AC002F /* InterfaceController.swift in Sources */,
+				82EBFD661A6BF0F100AC002F /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +454,16 @@
 			isa = PBXTargetDependency;
 			target = 8250F7271A6A5AB1007962C3 /* RunnerApp */;
 			targetProxy = 8250F7411A6A5AB1007962C3 /* PBXContainerItemProxy */;
+		};
+		82EBFD6E1A6BF0F100AC002F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82EBFD6A1A6BF0F100AC002F /* RunnerApp Watch App */;
+			targetProxy = 82EBFD6D1A6BF0F100AC002F /* PBXContainerItemProxy */;
+		};
+		82EBFD771A6BF0F100AC002F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82EBFD581A6BF0F000AC002F /* RunnerApp WatchKit Extension */;
+			targetProxy = 82EBFD761A6BF0F100AC002F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -340,9 +568,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RunnerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RunnerApp/RunnerApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +586,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RunnerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RunnerApp/RunnerApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -360,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -371,6 +615,8 @@
 				INFOPLIST_FILE = RunnerAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RunnerApp/RunnerAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunnerApp.app/RunnerApp";
 			};
 			name = Debug;
@@ -379,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -386,7 +633,64 @@
 				INFOPLIST_FILE = RunnerAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RunnerApp/RunnerAppTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunnerApp.app/RunnerApp";
+			};
+			name = Release;
+		};
+		82EBFD7A1A6BF0F100AC002F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = RunnerApp_WatchKit_Extension;
+				INFOPLIST_FILE = "RunnerApp Watch App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		82EBFD7B1A6BF0F100AC002F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				IBSC_MODULE = RunnerApp_WatchKit_Extension;
+				INFOPLIST_FILE = "RunnerApp Watch App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		82EBFD7D1A6BF0F100AC002F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RunnerApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		82EBFD7E1A6BF0F100AC002F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "RunnerApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -409,12 +713,30 @@
 				8250F74C1A6A5AB1007962C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8250F74D1A6A5AB1007962C3 /* Build configuration list for PBXNativeTarget "RunnerAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8250F74E1A6A5AB1007962C3 /* Debug */,
 				8250F74F1A6A5AB1007962C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82EBFD791A6BF0F100AC002F /* Build configuration list for PBXNativeTarget "RunnerApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82EBFD7A1A6BF0F100AC002F /* Debug */,
+				82EBFD7B1A6BF0F100AC002F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		82EBFD7C1A6BF0F100AC002F /* Build configuration list for PBXNativeTarget "RunnerApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82EBFD7D1A6BF0F100AC002F /* Debug */,
+				82EBFD7E1A6BF0F100AC002F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
