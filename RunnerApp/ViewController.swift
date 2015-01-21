@@ -9,9 +9,31 @@
 import UIKit
 import MapKit
 import CoreLocation
-class ViewController: UIViewController {
+class ViewController: UIViewController, RunProtocol {
     private var myContext = 0
-    private var locationController:LocationController =  LocationController()
+  
+ //   private var locationController:LocationController = LocationController()
+    private var runController:RunController = RunController()
+    
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var speed: UILabel!
+    @IBOutlet weak var speedMeasurementsLabel: UILabel!
+
+    
+//Run Protocol
+    func speedUpdated(speed: Double) {
+        
+    }
+    
+    func distanceUpdated(distance: Double) {
+        
+    }
+    
+    func timeUpdated(time: Int) {
+        
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,19 +42,34 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.runController.addRunObserver(self)
         // Do any additional setup after loading the view, typically from a nib.
-        locationController.addObserver(self, forKeyPath: "status", options:.New , context: nil)
-        locationController.addObserver(self, forKeyPath: "speed", options:.New , context: nil)
+     }
+    
+    //change the measurements
+    func changeMeasurements(){
+        if(self.runController.speedMode == measurements.kph){
+            runController.changeMeasurements(measurements.mph)
+            self.speedMeasurementsLabel.text = "mph"
+        }
+        else{
+            runController.changeMeasurements(measurements.kph)
+            self.speedMeasurementsLabel.text = "kph"
+        }
+        self.displaySpeed()
     }
 
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
-        if context == &myContext {
-            self.checkPermissions()
+    //stop, pause and start new
+    func displaySpeed(){
+        if self.runController.speed >= 0 {
+            self.speed.text = "\(self.runController.speed)"
         }
     }
     
+ 
+    
     func checkPermissions(){
-        var status:CLAuthorizationStatus =  locationController.status
+        var status:CLAuthorizationStatus =  runController.status
         //switch case that detrmines the error
         if(status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
@@ -51,5 +88,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func startRun(sender: AnyObject) {
+        self.runController.start()
+    }
 }
 

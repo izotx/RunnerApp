@@ -347,6 +347,7 @@
 					};
 					82EBFD6A1A6BF0F100AC002F = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8KV53E363M;
 					};
 				};
 			};
@@ -574,6 +575,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RunnerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -592,6 +594,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RunnerApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -731,6 +734,7 @@
 				82EBFD7B1A6BF0F100AC002F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82EBFD7C1A6BF0F100AC002F /* Build configuration list for PBXNativeTarget "RunnerApp WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -739,6 +743,7 @@
 				82EBFD7E1A6BF0F100AC002F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

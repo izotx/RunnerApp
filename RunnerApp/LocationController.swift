@@ -15,11 +15,12 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     dynamic var speed:CLLocationSpeed
     dynamic var direction: CLLocationDirection
     dynamic var currentLocation:CLLocation
-    
+    dynamic var distanceDelta:Double
     override init() {
         self.speed = 0
         self.direction = 0
         self.currentLocation = CLLocation();
+        self.distanceDelta = 0
         
         super.init();
         
@@ -32,9 +33,15 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 
         //specifying activity type as fitness
         self.locationManager.activityType = CLActivityType.Fitness
-    
     }
     
+    func stopUpdating(){
+        self.locationManager.stopUpdatingLocation();
+    }
+    
+    func startUpdating(){
+        self.locationManager.startUpdatingLocation()
+    }
     
     func checkPermissions(){
         if(CLLocationManager.headingAvailable())
@@ -60,9 +67,11 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        self.speed = newLocation.speed
-        self.currentLocation = newLocation
-        println("Speed Updated \(newLocation.speed)");
-        //here we need to pass the speed to the observer interested in it.
+        if(newLocation.distanceFromLocation(oldLocation)<15){
+            self.speed = newLocation.speed
+            self.currentLocation = newLocation
+            self.distanceDelta = newLocation.distanceFromLocation(oldLocation)
+        }
+
     }
 }
