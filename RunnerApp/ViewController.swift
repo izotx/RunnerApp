@@ -23,15 +23,19 @@ class ViewController: UIViewController, RunProtocol {
     
 //Run Protocol
     func speedUpdated(speed: Double) {
-        
+         self.speed.text = "\(speed)"
     }
     
     func distanceUpdated(distance: Double) {
-        
+        self.distance.text = "\(distance)"
     }
     
     func timeUpdated(time: Int) {
-        
+        self.duration.text = "\time"
+    }
+    
+    func statusUpdated(status: CLAuthorizationStatus) {
+        self.checkPermissions();
     }
     
     
@@ -69,9 +73,10 @@ class ViewController: UIViewController, RunProtocol {
  
     
     func checkPermissions(){
-        var status:CLAuthorizationStatus =  runController.status
+        var status:CLAuthorizationStatus =  runController.locationStatus
         //switch case that detrmines the error
-        if(status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse)
+
+        if(status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
             //display warning
             println("now it's authorized");

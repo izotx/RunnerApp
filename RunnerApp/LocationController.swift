@@ -59,7 +59,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
         self.status = status
         println("status changed \(self.status)")
-        if(status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse)
+        if(status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
             self.locationManager.startUpdatingLocation()
         }
