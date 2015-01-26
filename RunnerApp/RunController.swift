@@ -69,6 +69,9 @@ class RunController: NSObject {
         self.distance = 0
             
         self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(ti:1, target: self, selector: Selector("", userInfo: <#AnyObject?#>, repeats: <#Bool#>)
+        var nsrunloop = NSRunLoop();
+        nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
         self.state = runstate.active
         self.locationController.startUpdating();
         
