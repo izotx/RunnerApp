@@ -16,6 +16,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     dynamic var direction: CLLocationDirection
     dynamic var currentLocation:CLLocation
     dynamic var distanceDelta:Double
+   
     override init() {
         self.speed = 0
         self.direction = 0
@@ -61,7 +62,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         println("status changed \(self.status)")
         if(status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
-            self.locationManager.startUpdatingLocation()
+            //self.locationManager.startUpdatingLocation()
         }
     }
 

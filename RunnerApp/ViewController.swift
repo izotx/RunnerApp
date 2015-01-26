@@ -50,19 +50,7 @@ class ViewController: UIViewController, RunProtocol {
         // Do any additional setup after loading the view, typically from a nib.
      }
     
-    //change the measurements
-    func changeMeasurements(){
-        if(self.runController.speedMode == measurements.kph){
-            runController.changeMeasurements(measurements.mph)
-            self.speedMeasurementsLabel.text = "mph"
-        }
-        else{
-            runController.changeMeasurements(measurements.kph)
-            self.speedMeasurementsLabel.text = "kph"
-        }
-        self.displaySpeed()
-    }
-
+ 
     //stop, pause and start new
     func displaySpeed(){
         if self.runController.speed >= 0 {
@@ -92,9 +80,33 @@ class ViewController: UIViewController, RunProtocol {
         // Dispose of any resources that can be recreated.
     }
 
-
+/** Run */
+    
     @IBAction func startRun(sender: AnyObject) {
         self.runController.start()
     }
+    
+    @IBAction func pauseRun(sender: AnyObject) {
+        self.runController.pause()
+    }
+    
+    
+    @IBAction func stopRun(sender: AnyObject) {
+        self.runController.stop()
+    }
+
+    
+    @IBAction func metricMode(sender: AnyObject) {
+        self.runController.changeMeasurements()
+        //change the measurements
+            if(self.runController.speedMode == measurements.kph){
+                self.speedMeasurementsLabel.text = "kph"
+            }
+            else{
+                self.speedMeasurementsLabel.text = "mph"
+            }
+            self.displaySpeed()
+    }
+    
 }
 

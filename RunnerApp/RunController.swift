@@ -69,6 +69,7 @@ class RunController: NSObject {
         self.distance = 0
             
         self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        self.state = runstate.active
         self.locationController.startUpdating();
         
     }
@@ -79,27 +80,26 @@ class RunController: NSObject {
         for observer in self.observers {
             observer.timeUpdated(self.time)
         }
-        
-        
     }
     
-    func finish(){
+    func stop(){
         //stop running
-        self.timer.invalidate();
+        self.time = 0
+        self.timer.invalidate()
+        self.state = runstate.stopped
+        self.locationController.stopUpdating();
     }
     
     func pause(){
         //pause running
         self.timer.invalidate();
-        
+        self.state = runstate.paused
     }
     
     func resume(){
-
         self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        self.state = runstate.active
     }
-    
-
 
     func calculatedSpeed(speed: Double)->Double{
         switch self.speedMode {
@@ -115,8 +115,8 @@ class RunController: NSObject {
         
     }
     
-    func changeMeasurements(mode: measurements){
-        self.speedMode = mode
+    func changeMeasurements(){
+        self.speedMode = (self.speedMode == measurements.kph ) ? measurements.mph : measurements.kph
     }
     
     func createNewRun(){
@@ -133,7 +133,6 @@ class RunController: NSObject {
             for observer in self.observers {
                 observer.statusUpdated(self.locationStatus)
             }
-            
         }
         
         if(keyPath == "speed"){
@@ -149,9 +148,12 @@ class RunController: NSObject {
         if(keyPath == "distanceDelta"){
             //update speed
             //self.runController.distance
+            if(self.state != runstate.active) { return }
+            
             var distance: Double  = change[NSKeyValueChangeNewKey] as Double
             distance = round(distance * 100)/100
             self.distance += distance
+           
             for observer in self.observers {
                 observer.distanceUpdated(self.distance)
             }
