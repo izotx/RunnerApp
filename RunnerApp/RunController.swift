@@ -68,8 +68,9 @@ class RunController: NSObject {
         self.time = 0
         self.distance = 0
             
-        self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(ti:1, target: self, selector: Selector("", userInfo: <#AnyObject?#>, repeats: <#Bool#>)
+//        self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true);
+        
         var nsrunloop = NSRunLoop();
         nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
         self.state = runstate.active

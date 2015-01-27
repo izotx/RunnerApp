@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24D1B2801A7751E0006D03B3 /* StyleKitName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B27F1A7751E0006D03B3 /* StyleKitName.swift */; };
+		24D1B2821A775203006D03B3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
 		8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
 		8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */; };
 		8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7321A6A5AB1007962C3 /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		24D1B27F1A7751E0006D03B3 /* StyleKitName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StyleKitName.swift; path = art/StyleKitName.swift; sourceTree = "<group>"; };
+		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F72C1A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			children = (
 				82EBFD511A6B620300AC002F /* Run.swift */,
 				82EBFD4E1A6B620200AC002F /* Location.swift */,
+				24D1B27F1A7751E0006D03B3 /* StyleKitName.swift */,
+				24D1B2811A775203006D03B3 /* Buttons.swift */,
 				8250F72A1A6A5AB1007962C3 /* RunnerApp */,
 				8250F7431A6A5AB1007962C3 /* RunnerAppTests */,
 				82EBFD5A1A6BF0F000AC002F /* Frameworks */,
@@ -268,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D1B2821A775203006D03B3 /* Buttons.swift in Sources */,
 				8250F7541A6B4810007962C3 /* RunController.swift in Sources */,
 				8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */,
 				8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */,
@@ -275,6 +282,7 @@
 				82EBFD4F1A6B620200AC002F /* Location.swift in Sources */,
 				82EBFD521A6B620300AC002F /* Run.swift in Sources */,
 				8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */,
+				24D1B2801A7751E0006D03B3 /* StyleKitName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
