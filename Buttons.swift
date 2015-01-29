@@ -9,30 +9,18 @@
 import Foundation
 import UIKit
 
-class startButton:UIButton{
+
+
+/**Used as a parent of the */
+class CustomButton:UIButton{
     override  init(frame: CGRect) {
         super.init(frame: frame)
-            }
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        self.backgroundColor = UIColor.clearColor()
-    
-
     }
     
-    override func drawRect(rect: CGRect) {
-       self.backgroundColor = UIColor.clearColor()
-        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
-        {
-                StyleKitName.drawSelectedStartButton(frame: rect)
-        }
-        else
-        {       StyleKitName.drawStartButton(frame: rect)
-            
-        }
-
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.backgroundColor = UIColor.clearColor()
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -52,51 +40,70 @@ class startButton:UIButton{
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         super.touchesMoved(touches, withEvent: event)
-//             StyleKitName.drawSelectedStartButton(frame: self.frame)
-            self.setNeedsDisplay()
+        //             StyleKitName.drawSelectedStartButton(frame: self.frame)
+        self.setNeedsDisplay()
+    }
+}
+
+class stopButton:CustomButton{
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    override func drawRect(rect: CGRect) {
+        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
+        {
+            RunnerGraphicsStyleKit.drawSelectedStopButton(frame: rect);
+        }
+        else{
+            RunnerGraphicsStyleKit.drawStopButton(frame: rect);
+            
+        }
+        
+    }
+
+}
+
+class pauseButton:CustomButton{
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func drawRect(rect: CGRect) {
+        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
+        {
+            RunnerGraphicsStyleKit.drawSelectedPauseButton(frame: rect);
+        }
+        else{
+            RunnerGraphicsStyleKit.drawPauseButton(frame: rect);
+            
+        }
+
     }
     
 }
 
-class stopButton:UIButton{
+class startButton:CustomButton{
     override  init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        //fatalError("init(coder:) has not been implemented")
+        self.backgroundColor = UIColor.clearColor()
     }
     
     override func drawRect(rect: CGRect) {
-        if self.state == UIControlState.Highlighted
+        self.backgroundColor = UIColor.clearColor()
+        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
         {
-            StyleKitName.drawStopButton(frame: rect)
+           RunnerGraphicsStyleKit.drawSelectedStartButton(frame: rect)
         }
         else
-        {       StyleKitName.drawStopButton(frame: rect)
-        
+        {  RunnerGraphicsStyleKit.drawStartButton(frame: rect)
+            
         }
-        
-
     }
-    
-    
-}
-
-class pauseButton:UIButton{
-    override  init(frame: CGRect) {
-        super.init(frame: frame)
-
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func drawRect(rect: CGRect) {
-        StyleKitName.drawPauseButton(frame: rect)
-    }
-    
 }
