@@ -15,23 +15,64 @@ class ViewController: UIViewController, RunProtocol {
  //   private var locationController:LocationController = LocationController()
     private var runController:RunController = RunController()
     
-    @IBOutlet weak var duration: UILabel!
-    @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var speed: UILabel!
+
     @IBOutlet weak var speedMeasurementsLabel: UILabel!
 
+    @IBOutlet weak var distanceView: DoubleLabel!
+    @IBOutlet weak var timer: SingleLabel!
+    @IBOutlet weak var speedometer: DoubleLabel!
     
-//Run Protocol
+    @IBOutlet weak var speedStateButton: mphButton!
+
+    //Run Protocol
     func speedUpdated(speed: Double) {
-         self.speed.text = "\(speed)"
+        self.speedometer.topText = "\(speed)"
     }
     
     func distanceUpdated(distance: Double) {
-        self.distance.text = "\(distance)"
+        self.distanceView.topText = "\(distance)"
+    }
+    
+    func convertToText(time:Int)->String{
+        var hours = time/(3600)
+        var minutes = (time/60) - (hours * 60)
+        var seconds = time%60
+        var displayTime = ""
+        if(hours < 10) {
+            
+            displayTime = "\(hours):"
+            if(hours == 0){
+                displayTime = ""
+            }
+            
+            
+            
+            if(minutes < 10 ) {
+                displayTime = "\(displayTime)0\(minutes):"
+            }
+            else{
+                displayTime = "\(displayTime)\(minutes):"
+            }
+            
+            if(seconds < 10 ) {
+                displayTime = "\(displayTime)0\(seconds)"
+            }
+            else{
+                displayTime = "\(displayTime)\(seconds)"
+            }
+            
+            
+            
+        }
+        else{
+            displayTime = "\(hours)"
+        }
+        return displayTime
     }
     
     func timeUpdated(time: Int) {
-        self.duration.text = "\time"
+        var timeDisplay = convertToText(time)
+        self.timer.text = "\(timeDisplay)"
     }
     
     func statusUpdated(status: CLAuthorizationStatus) {
@@ -47,14 +88,17 @@ class ViewController: UIViewController, RunProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.runController.addRunObserver(self)
-        // Do any additional setup after loading the view, typically from a nib.
-     }
+        // Do any additional setup after loading the view, typically from a ni
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"pattern")!)
+        
+    }
     
  
     //stop, pause and start new
     func displaySpeed(){
         if self.runController.speed >= 0 {
-            self.speed.text = "\(self.runController.speed)"
+            self.speedometer.topText = "\(self.runController.speed)"
         }
     }
     
@@ -100,11 +144,15 @@ class ViewController: UIViewController, RunProtocol {
         self.runController.changeMeasurements()
         //change the measurements
             if(self.runController.speedMode == measurements.kph){
-                self.speedMeasurementsLabel.text = "kph"
+                self.distanceView.bottomText = "km"
+                self.speedometer.bottomText = "kph"
+                self.speedStateButton.text = "kph"
             }
             else{
-                self.speedMeasurementsLabel.text = "mph"
-            }
+                self.distanceView.bottomText = "km"
+                self.speedometer.bottomText = "mph"
+                self.speedStateButton.text = "mph"
+        }
             self.displaySpeed()
     }
     

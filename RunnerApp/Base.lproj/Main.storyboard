@@ -17,140 +17,260 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6D-Bt-RmQ">
-                                <rect key="frame" x="267" y="157" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQn-UV-SMe">
-                                <rect key="frame" x="267" y="207" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-Ln-2eD">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="N0k-eb-VcN"/>
-                                    <barButtonItem title="Start" id="I21-wD-2xh">
-                                        <connections>
-                                            <action selector="startRun:" destination="vXZ-lx-hvc" id="Qlv-qo-ogu"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="paW-B7-OXC"/>
-                                    <barButtonItem enabled="NO" title="Pause" id="7am-np-q7X"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Y1I-ic-uVu"/>
-                                    <barButtonItem title="Reset" id="qXt-YO-Tae"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1U6-Qm-Pfs"/>
-                                    <barButtonItem title="Finish" id="Y0Q-50-3lI"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="O2W-DE-sxb"/>
-                                </items>
-                            </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-So-avi" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="116" y="104" width="60" height="60"/>
+                                <rect key="frame" x="106" y="143" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="P2J-U8-PX5"/>
+                                    <constraint firstAttribute="height" constant="65" id="zK5-Pd-Ktk"/>
+                                </constraints>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="214" y="65" width="60" height="60"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nj-rA-FVy" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="416" y="129" width="60" height="60"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ait-ZA-EW4">
-                                <rect key="frame" x="123" y="356" width="53" height="63"/>
-                                <state key="normal" title="Pause">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="P2J-U8-PX5"/>
+                                        <exclude reference="zK5-Pd-Ktk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="P2J-U8-PX5"/>
+                                        <include reference="zK5-Pd-Ktk"/>
+                                    </mask>
+                                </variation>
                                 <connections>
-                                    <action selector="pauseRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bGZ-6S-I2l"/>
+                                    <action selector="startRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rmi-bk-v71"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7f-gH-jH6">
-                                <rect key="frame" x="204" y="356" width="53" height="63"/>
-                                <state key="normal" title="Stop">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rko-n7-cFK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-vH-Jhf">
-                                <rect key="frame" x="280" y="356" width="53" height="63"/>
-                                <state key="normal" title="kph">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="metricMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kSN-4T-FyM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Steps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC0-Ob-BAM">
-                                <rect key="frame" x="267" y="311" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="089-CI-P3u">
-                                <rect key="frame" x="267" y="260" width="66" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwG-Zv-5P4" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="397" y="157" width="60" height="60"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yw-Bun" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="332" y="65" width="60" height="60"/>
+                                <rect key="frame" x="334" y="88" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="UMT-xH-3I0">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="75" id="zNn-wQ-oyF">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                </constraints>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UMT-xH-3I0"/>
+                                        <exclude reference="zNn-wQ-oyF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="UMT-xH-3I0"/>
+                                        <include reference="zNn-wQ-oyF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="stopRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x5e-iJ-tJy"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="214" y="88" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="cCe-up-VGZ">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="75" id="iST-3Z-eSO">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cCe-up-VGZ"/>
+                                        <exclude reference="iST-3Z-eSO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="cCe-up-VGZ"/>
+                                        <include reference="iST-3Z-eSO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B64-1A-Dtr"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-pU-cnB" customClass="SingleLabel" customModule="MyCustomViews">
+                                <rect key="frame" x="76" y="399" width="121" height="121"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="KIj-lr-oiG"/>
+                                    <constraint firstAttribute="width" constant="121" id="aZK-WE-3a0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="00:00:00"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KIj-lr-oiG"/>
+                                        <exclude reference="aZK-WE-3a0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="KIj-lr-oiG"/>
+                                        <include reference="aZK-WE-3a0"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-51-KDs" customClass="DoubleLabel" customModule="MyCustomViews">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="60e-dF-vXS"/>
+                                    <constraint firstAttribute="width" constant="250" id="wRX-Wp-5Dh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bottomText" value="kph"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="topText" value="0.0"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nj-rA-FVy" customClass="mphButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="429" y="135" width="75" height="75"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="8zZ-YO-nvC">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="75" id="WOM-fX-5kD">
+                                        <variation key="heightClass=regular" constant="65"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="metricMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tdG-sh-hfH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-DC-BJx" customClass="DoubleLabel" customModule="MyCustomViews">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="H5o-C7-nT0"/>
+                                    <constraint firstAttribute="height" constant="165" id="on0-Zb-bMZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="bottomText" value="kph"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="topText" value="0.0"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H5o-C7-nT0"/>
+                                        <exclude reference="on0-Zb-bMZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="H5o-C7-nT0"/>
+                                        <include reference="on0-Zb-bMZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ouc-Ln-2eD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4Jm-TG-CgC"/>
-                            <constraint firstItem="H6D-Bt-RmQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="157" id="BrE-jR-YZy"/>
-                            <constraint firstAttribute="trailing" secondItem="ouc-Ln-2eD" secondAttribute="trailing" id="KoD-jZ-Q3v"/>
-                            <constraint firstItem="089-CI-P3u" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="260" id="aWZ-v5-vqm"/>
-                            <constraint firstAttribute="centerX" secondItem="H6D-Bt-RmQ" secondAttribute="centerX" id="aye-a8-MfA"/>
-                            <constraint firstItem="vQn-UV-SMe" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="207" id="kku-95-TW6"/>
-                            <constraint firstAttribute="bottom" secondItem="ouc-Ln-2eD" secondAttribute="bottom" id="r8j-Nv-Fjj"/>
-                            <constraint firstAttribute="centerX" secondItem="089-CI-P3u" secondAttribute="centerX" id="v4G-iX-HaH"/>
-                            <constraint firstAttribute="centerX" secondItem="vQn-UV-SMe" secondAttribute="centerX" id="zur-rb-bcr"/>
+                            <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-188" id="1Xr-ov-xH0">
+                                <variation key="heightClass=regular" constant="-184.5"/>
+                            </constraint>
+                            <constraint firstItem="MvR-So-avi" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-172" id="68e-9o-bmh">
+                                <variation key="heightClass=regular" constant="-109.5"/>
+                            </constraint>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="0nj-rA-FVy" secondAttribute="centerY" constant="127.5" id="79I-Mf-rqM">
+                                <variation key="heightClass=regular" constant="127.5"/>
+                            </constraint>
+                            <constraint firstItem="3ia-yw-Bun" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="89" id="BIJ-SE-6Bk">
+                                <variation key="heightClass=regular" constant="39.5"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" id="BMd-w7-KVX"/>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="D4P-DC-BJx" secondAttribute="centerX" constant="-109.5" id="Bc0-mg-9gz">
+                                <variation key="heightClass=regular" constant="-89.5"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" id="NF2-Iq-eKV"/>
+                            <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-72" id="RZW-ux-s73">
+                                <variation key="heightClass=regular" constant="-39.5"/>
+                            </constraint>
+                            <constraint firstItem="3ia-yw-Bun" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-198" id="THz-uP-u5f">
+                                <variation key="heightClass=regular" constant="-184.5"/>
+                            </constraint>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="0nj-rA-FVy" secondAttribute="centerX" constant="-166.5" id="V5X-pW-EGf">
+                                <variation key="heightClass=regular" constant="-109.5"/>
+                            </constraint>
+                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-171.5" id="eDT-oS-9sL">
+                                <variation key="heightClass=regular" constant="-90.5"/>
+                            </constraint>
+                            <constraint firstItem="MvR-So-avi" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-135" id="ej7-6k-iEH">
+                                <variation key="heightClass=regular" constant="-127.5"/>
+                            </constraint>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="D4P-DC-BJx" secondAttribute="centerY" constant="-177.5" id="jP4-a0-knl">
+                                <variation key="heightClass=regular" constant="-193.5"/>
+                            </constraint>
+                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="127.5" id="oXz-yS-YuJ">
+                                <variation key="heightClass=regular" constant="177.5"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="D4P-DC-BJx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="68e-9o-bmh"/>
+                                <exclude reference="ej7-6k-iEH"/>
+                                <exclude reference="1Xr-ov-xH0"/>
+                                <exclude reference="RZW-ux-s73"/>
+                                <exclude reference="Bc0-mg-9gz"/>
+                                <exclude reference="jP4-a0-knl"/>
+                                <exclude reference="BIJ-SE-6Bk"/>
+                                <exclude reference="THz-uP-u5f"/>
+                                <exclude reference="eDT-oS-9sL"/>
+                                <exclude reference="oXz-yS-YuJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="D4P-DC-BJx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="68e-9o-bmh"/>
+                                <include reference="ej7-6k-iEH"/>
+                                <include reference="1Xr-ov-xH0"/>
+                                <include reference="RZW-ux-s73"/>
+                                <include reference="Bc0-mg-9gz"/>
+                                <include reference="jP4-a0-knl"/>
+                                <include reference="BIJ-SE-6Bk"/>
+                                <include reference="THz-uP-u5f"/>
+                                <include reference="eDT-oS-9sL"/>
+                                <include reference="oXz-yS-YuJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="distance" destination="vQn-UV-SMe" id="ueJ-Yp-fl4"/>
-                        <outlet property="duration" destination="089-CI-P3u" id="oqT-bC-Bfm"/>
-                        <outlet property="speed" destination="H6D-Bt-RmQ" id="Dc5-r6-hCe"/>
+                        <outlet property="distanceView" destination="D4P-DC-BJx" id="3nb-Mg-eLd"/>
+                        <outlet property="speedStateButton" destination="0nj-rA-FVy" id="Hkn-Ne-dh9"/>
+                        <outlet property="speedometer" destination="V8e-51-KDs" id="nN9-F5-EE2"/>
+                        <outlet property="timer" destination="J5n-pU-cnB" id="eHf-5G-WRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9" y="69"/>
+            <point key="canvasLocation" x="89" y="68.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fGC-Qu-1ZJ">

@@ -12,7 +12,7 @@ import CoreLocation
 class LocationController: NSObject, CLLocationManagerDelegate {
     var locationManager:CLLocationManager = CLLocationManager()
     dynamic var status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
-    dynamic var speed:CLLocationSpeed
+    dynamic var speed: Double
     dynamic var direction: CLLocationDirection
     dynamic var currentLocation:CLLocation
     dynamic var distanceDelta:Double
@@ -69,9 +69,12 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
         if(newLocation.distanceFromLocation(oldLocation)<15){
-            self.speed = newLocation.speed
+            if(oldLocation == nil){return}
+            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - oldLocation.timestamp.timeIntervalSince1970
+            var distance = newLocation.distanceFromLocation(oldLocation)
+            self.speed = distance / timePassed
             self.currentLocation = newLocation
-            self.distanceDelta = newLocation.distanceFromLocation(oldLocation)
+            self.distanceDelta = distance
         }
 
     }

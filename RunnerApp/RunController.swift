@@ -66,9 +66,9 @@ class RunController: NSObject {
             self.timer.invalidate()
         }
         self.time = 0
-        self.distance = 0
+        self.distance = 0.0
             
-//        self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true);
         
         var nsrunloop = NSRunLoop();
@@ -78,7 +78,7 @@ class RunController: NSObject {
         
     }
     
-    func timerTick(timer: NSTimer)->Void
+    func timerTick()->Void
     {
         self.time += 1
         for observer in self.observers {
@@ -108,10 +108,10 @@ class RunController: NSObject {
     func calculatedSpeed(speed: Double)->Double{
         switch self.speedMode {
         case measurements.kph:
-                return speed * 3600/1000
+                return speed * 3600.0/1000.0
 
         case measurements.kph:
-            return speed * 3600/1687
+            return speed * 3600.0/1687.0
     
 
         default: return speed
@@ -142,7 +142,9 @@ class RunController: NSObject {
         if(keyPath == "speed"){
             //update speed
             var speed: Double  = change[NSKeyValueChangeNewKey] as Double
-             distance = round(speed * 100)/100
+            // distance = round(speed * 100)/100
+            
+            println("Speed \(speed)")
             
             for observer in self.observers {
                 observer.speedUpdated(speed)
@@ -154,10 +156,18 @@ class RunController: NSObject {
             //self.runController.distance
             if(self.state != runstate.active) { return }
             
-            var distance: Double  = change[NSKeyValueChangeNewKey] as Double
-            distance = round(distance * 100)/100
-            self.distance += distance
-           
+            var newDistance: Double  = change[NSKeyValueChangeNewKey] as Double
+            
+//            println("self distance \(self.distance)")
+//            println("new distance \(newDistance)")
+//            
+            newDistance = round(newDistance * 10)/10
+//           
+//            println("distance 2 \(newDistance)")
+            
+            self.distance = self.distance + newDistance
+//            println("after self distance \(self.distance)")
+            
             for observer in self.observers {
                 observer.distanceUpdated(self.distance)
             }
