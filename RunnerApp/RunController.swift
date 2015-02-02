@@ -21,11 +21,18 @@ enum measurements{
     case kph
 }
 
+enum lengths : Double{
+    case km = 1000.0
+    case mile = 1687.0
+}
+
+
 protocol RunProtocol{
-    func speedUpdated(speed:Double)
-    func distanceUpdated(distance:Double)
-    func timeUpdated(time:Int)
+    func speedUpdated(speed:String)
+    func distanceUpdated(distance:String)
+    func timeUpdated(time:String)
     func statusUpdated(status: CLAuthorizationStatus)
+    func stateUpdated(state:runstate)
 }
 
 class RunController: NSObject {
@@ -35,54 +42,96 @@ class RunController: NSObject {
     var time:Int
     var timer:NSTimer
     var distance:Double
-    var state : runstate = runstate.stopped
+    var state : runstate{
+        didSet{
+            for observer in self.observers {
+                observer.stateUpdated(self.state)
+            }
+
+        }
+    
+    } //= runstate.stopped
+    
     var observers: [RunProtocol] = []
     var locationStatus  : CLAuthorizationStatus
     private var locationController:LocationController =  LocationController()
+ 
     func addRunObserver(observer:RunProtocol){
         self.observers.append(observer)
     }
+    
+    func getDistance(rawDistance:Double)->String{
+        var km = round (100 * self.distance/lengths.km.rawValue )/100
+        var miles = round (100 * self.distance/lengths.mile.rawValue )/100
+        
+        var displayText = ""
+        if(self.speedMode == measurements.kph)
+        {
+            displayText = "\(km)"
+        }
+        else{
+            displayText = "\(miles)"
+        }
+        return displayText
+    }
+    
+
     
     override init() {
         self.currentRunIndex = -1
         self.speedMode = measurements.kph
         self.speed = 0
+    
         self.time = 0
         self.timer = NSTimer();
         self.distance = 0
         self.locationStatus = self.locationController.status
+        self.state = runstate.stopped
+
         super.init()
     
         locationController.addObserver(self, forKeyPath: "status", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "speed", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "distanceDelta", options:.New , context: nil)
-
+        
+        self.addObserver(self, forKeyPath: "state", options:.New , context: nil)
+        self.locationController.startUpdating();
+        
     }
     
     func start(){
         //create new run
-        if self.timer.valid
-        {
-            self.timer.invalidate()
+        self.locationController.startUpdating()
+
+        if(self.state == runstate.paused){
+            self.resume()
+            return
         }
-        self.time = 0
-        self.distance = 0.0
+        
+        if(self.state == runstate.stopped){
+            self.time = 0
+            self.distance = 0.0
             
-        
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true);
-        
-        var nsrunloop = NSRunLoop();
-        nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
+        }
+
+        if !self.timer.valid
+        {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true);
+            
+            var nsrunloop = NSRunLoop();
+            nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
+
+        }
         self.state = runstate.active
-        self.locationController.startUpdating();
-        
+  
     }
     
     func timerTick()->Void
     {
         self.time += 1
+        var displayText = convertTimeToText(self.time)
         for observer in self.observers {
-            observer.timeUpdated(self.time)
+            observer.timeUpdated(displayText)
         }
     }
     
@@ -91,42 +140,85 @@ class RunController: NSObject {
         self.time = 0
         self.timer.invalidate()
         self.state = runstate.stopped
-        self.locationController.stopUpdating();
+        
+        //self.locationController.stopUpdating();
     }
     
     func pause(){
         //pause running
         self.timer.invalidate();
         self.state = runstate.paused
+        //self.locationController.stopUpdating();
     }
     
     func resume(){
-        self.timer = NSTimer(timeInterval: 1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true);
+        
+        var nsrunloop = NSRunLoop();
+        nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
         self.state = runstate.active
+          self.locationController.startUpdating();
     }
 
-    func calculatedSpeed(speed: Double)->Double{
-        switch self.speedMode {
+    func calculateSpeed(speed: Double)->Double{
+            switch self.speedMode {
         case measurements.kph:
-                return speed * 3600.0/1000.0
+            return round(10 * speed * 3600.0 / lengths.km.rawValue) / 10
 
-        case measurements.kph:
-            return speed * 3600.0/1687.0
+        case measurements.mph:
+            return round( 10 * speed * 3600.0 / lengths.mile.rawValue) / 10
     
 
-        default: return speed
+       // default: return speed
         }
         
     }
     
     func changeMeasurements(){
         self.speedMode = (self.speedMode == measurements.kph ) ? measurements.mph : measurements.kph
+        
     }
     
     func createNewRun(){
         var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         var context: NSManagedObjectContext = appDel.managedObjectContext!
  }
+    
+    
+    func convertTimeToText(time:Int)->String{
+        var hours = time/(3600)
+        var minutes = (time/60) - (hours * 60)
+        var seconds = time%60
+        var displayTime = ""
+        if(hours < 10) {
+            
+            displayTime = "\(hours):"
+            if(hours == 0){
+                displayTime = ""
+            }
+            
+            if(minutes < 10 ) {
+                displayTime = "\(displayTime)0\(minutes):"
+            }
+            else{
+                displayTime = "\(displayTime)\(minutes):"
+            }
+            
+            if(seconds < 10 ) {
+                displayTime = "\(displayTime)0\(seconds)"
+            }
+            else{
+                displayTime = "\(displayTime)\(seconds)"
+            }
+            
+            
+            
+        }
+        else{
+            displayTime = "\(hours)"
+        }
+        return displayTime
+    }
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
         
@@ -141,13 +233,14 @@ class RunController: NSObject {
         
         if(keyPath == "speed"){
             //update speed
-            var speed: Double  = change[NSKeyValueChangeNewKey] as Double
-            // distance = round(speed * 100)/100
-            
-            println("Speed \(speed)")
+            var rawSpeed: Double  = change[NSKeyValueChangeNewKey] as Double
+            self.speed = rawSpeed
+            var localizedSpeed = calculateSpeed(self.speed)
+          
+            var displayText = "\(localizedSpeed)"
             
             for observer in self.observers {
-                observer.speedUpdated(speed)
+                observer.speedUpdated(displayText)
             }
         }
         
@@ -157,20 +250,16 @@ class RunController: NSObject {
             if(self.state != runstate.active) { return }
             
             var newDistance: Double  = change[NSKeyValueChangeNewKey] as Double
-            
-//            println("self distance \(self.distance)")
-//            println("new distance \(newDistance)")
-//            
-            newDistance = round(newDistance * 10)/10
-//           
-//            println("distance 2 \(newDistance)")
-            
             self.distance = self.distance + newDistance
-//            println("after self distance \(self.distance)")
-            
             for observer in self.observers {
-                observer.distanceUpdated(self.distance)
+                observer.distanceUpdated(getDistance(self.distance))
             }
+        }
+        if(keyPath == "state"){
+            for observer in self.observers {
+                observer.stateUpdated(self.state)
+            }
+    
         }
         
     }

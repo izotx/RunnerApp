@@ -3,6 +3,7 @@
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-So-avi" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-So-avi" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
                                 <rect key="frame" x="106" y="143" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -44,7 +45,7 @@
                                     <action selector="startRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rmi-bk-v71"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yw-Bun" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yw-Bun" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
                                 <rect key="frame" x="334" y="88" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -75,7 +76,7 @@
                                     <action selector="stopRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x5e-iJ-tJy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
                                 <rect key="frame" x="214" y="88" width="60" height="60"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -106,16 +107,13 @@
                                     <action selector="pauseRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B64-1A-Dtr"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-pU-cnB" customClass="SingleLabel" customModule="MyCustomViews">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-pU-cnB" customClass="SingleLabel" customModule="RunnerApp">
                                 <rect key="frame" x="76" y="399" width="121" height="121"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="KIj-lr-oiG"/>
                                     <constraint firstAttribute="width" constant="121" id="aZK-WE-3a0"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="00:00:00"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KIj-lr-oiG"/>
@@ -129,17 +127,13 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-51-KDs" customClass="DoubleLabel" customModule="MyCustomViews">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-51-KDs" customClass="SpeedomoterView" customModule="RunnerApp">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="60e-dF-vXS"/>
-                                    <constraint firstAttribute="width" constant="250" id="wRX-Wp-5Dh"/>
+                                    <constraint firstAttribute="height" constant="255" id="60e-dF-vXS"/>
+                                    <constraint firstAttribute="width" constant="255" id="wRX-Wp-5Dh"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="bottomText" value="kph"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="topText" value="0.0"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nj-rA-FVy" customClass="mphButton" customModule="RunnerApp" customModuleProvider="target">
                                 <rect key="frame" x="429" y="135" width="75" height="75"/>
@@ -160,17 +154,13 @@
                                     <action selector="metricMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tdG-sh-hfH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-DC-BJx" customClass="DoubleLabel" customModule="MyCustomViews">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-DC-BJx" customClass="DoubleLabel" customModule="RunnerApp">
                                 <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="H5o-C7-nT0"/>
                                     <constraint firstAttribute="height" constant="165" id="on0-Zb-bMZ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="bottomText" value="kph"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="topText" value="0.0"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="H5o-C7-nT0"/>
@@ -184,9 +174,30 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runner App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-x0-VMF">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="rgT-lO-NWm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rgT-lO-NWm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="rgT-lO-NWm"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bTF-x0-VMF" secondAttribute="centerX" id="1Mf-zb-i9e"/>
                             <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-188" id="1Xr-ov-xH0">
                                 <variation key="heightClass=regular" constant="-184.5"/>
                             </constraint>
@@ -203,6 +214,7 @@
                             <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="D4P-DC-BJx" secondAttribute="centerX" constant="-109.5" id="Bc0-mg-9gz">
                                 <variation key="heightClass=regular" constant="-89.5"/>
                             </constraint>
+                            <constraint firstItem="bTF-x0-VMF" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="35" id="H8d-3J-cwX"/>
                             <constraint firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" id="NF2-Iq-eKV"/>
                             <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-72" id="RZW-ux-s73">
                                 <variation key="heightClass=regular" constant="-39.5"/>
@@ -229,8 +241,11 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="D4P-DC-BJx"/>
+                                <exclude reference="bTF-x0-VMF"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1Mf-zb-i9e"/>
+                                <exclude reference="H8d-3J-cwX"/>
                                 <exclude reference="68e-9o-bmh"/>
                                 <exclude reference="ej7-6k-iEH"/>
                                 <exclude reference="1Xr-ov-xH0"/>
@@ -246,8 +261,11 @@
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="D4P-DC-BJx"/>
+                                <include reference="bTF-x0-VMF"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1Mf-zb-i9e"/>
+                                <include reference="H8d-3J-cwX"/>
                                 <include reference="68e-9o-bmh"/>
                                 <include reference="ej7-6k-iEH"/>
                                 <include reference="1Xr-ov-xH0"/>
@@ -263,14 +281,17 @@
                     </view>
                     <connections>
                         <outlet property="distanceView" destination="D4P-DC-BJx" id="3nb-Mg-eLd"/>
+                        <outlet property="pauseButtonOutlet" destination="oO5-Bg-tfc" id="q8B-c9-5CS"/>
                         <outlet property="speedStateButton" destination="0nj-rA-FVy" id="Hkn-Ne-dh9"/>
-                        <outlet property="speedometer" destination="V8e-51-KDs" id="nN9-F5-EE2"/>
+                        <outlet property="speedometer" destination="V8e-51-KDs" id="yXJ-XQ-lBc"/>
+                        <outlet property="startButtonOutlet" destination="MvR-So-avi" id="Nxt-rp-8kL"/>
+                        <outlet property="stopButtonOutlet" destination="3ia-yw-Bun" id="HBl-cl-WCM"/>
                         <outlet property="timer" destination="J5n-pU-cnB" id="eHf-5G-WRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="68.25"/>
+            <point key="canvasLocation" x="-52" y="57"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fGC-Qu-1ZJ">

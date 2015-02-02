@@ -14,16 +14,16 @@
 		2422AD441A7DCDC2004F3A03 /* MyCustomViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD431A7DCDC2004F3A03 /* MyCustomViewsTests.swift */; };
 		2422AD471A7DCDC2004F3A03 /* MyCustomViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2422AD301A7DCDC1004F3A03 /* MyCustomViews.framework */; };
 		2422AD481A7DCDC2004F3A03 /* MyCustomViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2422AD301A7DCDC1004F3A03 /* MyCustomViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2422AD501A7DCDF9004F3A03 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD291A7DC1F4004F3A03 /* Labels.swift */; };
 		2422AD511A7DCED5004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */; };
 		2422AD521A7DCFDF004F3A03 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
 		24235F0C1A7E13A300C401BB /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 24235F0B1A7E13A300C401BB /* pattern.png */; };
+		24C512771A7EEE100084AE24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C512761A7EEE100084AE24 /* Images.xcassets */; };
+		24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
 		24D1B2821A775203006D03B3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
 		8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
 		8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */; };
 		8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7321A6A5AB1007962C3 /* ViewController.swift */; };
 		8250F7361A6A5AB1007962C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8250F7341A6A5AB1007962C3 /* Main.storyboard */; };
-		8250F7381A6A5AB1007962C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8250F7371A6A5AB1007962C3 /* Images.xcassets */; };
 		8250F73B1A6A5AB1007962C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */; };
 		8250F7471A6A5AB1007962C3 /* RunnerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7461A6A5AB1007962C3 /* RunnerAppTests.swift */; };
 		8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7501A6A5AFB007962C3 /* LocationController.swift */; };
@@ -94,7 +94,7 @@
 
 /* Begin PBXFileReference section */
 		2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunnerGraphicsStyleKit.swift; path = art/RunnerGraphicsStyleKit.swift; sourceTree = "<group>"; };
-		2422AD291A7DC1F4004F3A03 /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Labels.swift; path = ../Labels.swift; sourceTree = "<group>"; };
+		2422AD291A7DC1F4004F3A03 /* Labels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		2422AD301A7DCDC1004F3A03 /* MyCustomViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyCustomViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2422AD331A7DCDC1004F3A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2422AD341A7DCDC1004F3A03 /* MyCustomViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomViews.h; sourceTree = "<group>"; };
@@ -102,6 +102,8 @@
 		2422AD421A7DCDC2004F3A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2422AD431A7DCDC2004F3A03 /* MyCustomViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewsTests.swift; sourceTree = "<group>"; };
 		24235F0B1A7E13A300C401BB /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
+		24C512761A7EEE100084AE24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedometerStyleKit.swift; path = art/SpeedometerStyleKit.swift; sourceTree = "<group>"; };
 		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F72C1A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 		8250F7301A6A5AB1007962C3 /* RunnerApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunnerApp.xcdatamodel; sourceTree = "<group>"; };
 		8250F7321A6A5AB1007962C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8250F7351A6A5AB1007962C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8250F7371A6A5AB1007962C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8250F73A1A6A5AB1007962C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8250F7401A6A5AB1007962C3 /* RunnerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F7451A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,7 +162,6 @@
 		2422AD311A7DCDC1004F3A03 /* MyCustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				2422AD291A7DC1F4004F3A03 /* Labels.swift */,
 				2422AD341A7DCDC1004F3A03 /* MyCustomViews.h */,
 				2422AD321A7DCDC1004F3A03 /* Supporting Files */,
 			);
@@ -201,6 +201,8 @@
 				82EBFD511A6B620300AC002F /* Run.swift */,
 				82EBFD4E1A6B620200AC002F /* Location.swift */,
 				24D1B2811A775203006D03B3 /* Buttons.swift */,
+				24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */,
+				2422AD291A7DC1F4004F3A03 /* Labels.swift */,
 				8250F72A1A6A5AB1007962C3 /* RunnerApp */,
 				8250F7431A6A5AB1007962C3 /* RunnerAppTests */,
 				2422AD311A7DCDC1004F3A03 /* MyCustomViews */,
@@ -230,12 +232,12 @@
 				8250F7321A6A5AB1007962C3 /* ViewController.swift */,
 				8250F7531A6B480F007962C3 /* RunController.swift */,
 				8250F7341A6A5AB1007962C3 /* Main.storyboard */,
-				8250F7371A6A5AB1007962C3 /* Images.xcassets */,
 				8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */,
 				8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */,
 				8250F72B1A6A5AB1007962C3 /* Supporting Files */,
 				8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */,
 				8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */,
+				24C512761A7EEE100084AE24 /* Images.xcassets */,
 			);
 			path = RunnerApp;
 			sourceTree = "<group>";
@@ -437,7 +439,7 @@
 				24235F0C1A7E13A300C401BB /* pattern.png in Resources */,
 				8250F7361A6A5AB1007962C3 /* Main.storyboard in Resources */,
 				8250F73B1A6A5AB1007962C3 /* LaunchScreen.xib in Resources */,
-				8250F7381A6A5AB1007962C3 /* Images.xcassets in Resources */,
+				24C512771A7EEE100084AE24 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +458,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2422AD521A7DCFDF004F3A03 /* Buttons.swift in Sources */,
-				2422AD501A7DCDF9004F3A03 /* Labels.swift in Sources */,
 				2422AD511A7DCED5004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +477,7 @@
 				24D1B2821A775203006D03B3 /* Buttons.swift in Sources */,
 				2422AD281A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */,
 				8250F7541A6B4810007962C3 /* RunController.swift in Sources */,
+				24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */,
 				8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */,
 				8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */,
 				8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */,
@@ -704,7 +706,8 @@
 		8250F74B1A6A5AB1007962C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -723,7 +726,8 @@
 		8250F74C1A6A5AB1007962C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -19,18 +19,24 @@ protocol customButtonState{
     var delegate :customButtonState?
     
     override  init(frame: CGRect) {
+        self.userSelected = false
         super.init(frame: frame)
     }
     
-
+    var userSelected:Bool{
+        didSet{
+            self.setNeedsDisplay();
+        }
+    }
     
     required init(coder aDecoder: NSCoder) {
+         self.userSelected = false
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
-      
+
         self.addObserver(self, forKeyPath: "selected", options:.New, context: nil);
         self.addObserver(self, forKeyPath: "highlighted", options:.New, context: nil);
-
+        self.addObserver(self, forKeyPath: "userSelected", options:.New, context: nil);
     }
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {
@@ -40,6 +46,10 @@ protocol customButtonState{
         if(keyPath == "highlighted"){
             self.setNeedsDisplay();
         }
+        if(keyPath == "userSelected"){
+            self.setNeedsDisplay();
+        }
+        
         
     }
     
@@ -98,7 +108,7 @@ class startButton:CustomButton{
     }
     
     override func drawRect(rect: CGRect) {
-        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
+        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected || self.userSelected == true
         {
             RunnerGraphicsStyleKit.drawSelectedStartButton(frame: rect);
         }
@@ -119,7 +129,7 @@ class pauseButton:CustomButton{
     }
     
     override func drawRect(rect: CGRect) {
-        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected
+        if self.state == UIControlState.Highlighted || self.state == UIControlState.Selected  || self.userSelected == true
         {
             RunnerGraphicsStyleKit.drawSelectedPauseButton(frame: rect);
         }

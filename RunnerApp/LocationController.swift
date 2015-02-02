@@ -68,7 +68,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        if(newLocation.distanceFromLocation(oldLocation)<15){
+        if(newLocation.distanceFromLocation(oldLocation)<100){
             if(oldLocation == nil){return}
             var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - oldLocation.timestamp.timeIntervalSince1970
             var distance = newLocation.distanceFromLocation(oldLocation)
