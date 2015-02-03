@@ -127,12 +127,12 @@
                   symbolName = "RunnerApp.CustomButton.observeValueForKeyPath (RunnerApp.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
                   moduleName = "RunnerApp"
                   urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444644779.920511"
+                  timestampString = "444667118.714338"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "539">
+                  offsetFromSymbolStart = "428">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -141,12 +141,12 @@
                   symbolName = "MyCustomViews.CustomButton.observeValueForKeyPath (MyCustomViews.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
                   moduleName = "MyCustomViews"
                   urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444644780.244728"
+                  timestampString = "444667119.352542"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "539">
+                  offsetFromSymbolStart = "428">
                </Location>
             </Locations>
          </BreakpointContent>
