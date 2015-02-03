@@ -14,13 +14,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     dynamic var status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
     dynamic var speed: Double
     dynamic var direction: CLLocationDirection
-    dynamic var currentLocation:CLLocation
+    dynamic var currentLocation:CLLocation?
     dynamic var distanceDelta:Double
    
     override init() {
         self.speed = 0
         self.direction = 0
-        self.currentLocation = CLLocation();
+       // self.currentLocation: = CLLocation();
         self.distanceDelta = 0
         
         super.init();
@@ -28,6 +28,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         //check for permissions
         self.locationManager.delegate = self
         self.locationManager.requestAlwaysAuthorization();
+        self.locationManager.desiredAccuracy = 5
         
         //saving battery
         self.locationManager.pausesLocationUpdatesAutomatically = true
@@ -60,21 +61,62 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
         self.status = status
         println("status changed \(self.status)")
-        if(status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse)
+        if(status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
             //self.locationManager.startUpdatingLocation()
         }
     }
+    
+    func filterBadResults(newLocation : CLLocation)->Bool{
+        if (newLocation.horizontalAccuracy < 0) {
+            return false
+        
+        }
+        if (newLocation.horizontalAccuracy > 66) {
+            return false
+        }
+        
+        if (newLocation.verticalAccuracy < 0) {
+         //   return false
+            
+        }
+        
+        if(self.currentLocation != nil){
+            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - self.currentLocation!.timestamp.timeIntervalSince1970
+            var tempDistance = newLocation.distanceFromLocation(self.currentLocation)
+
+            var newSpeed = tempDistance / timePassed
+            println("\(newSpeed)")
+
+            if((newSpeed - self.speed) > 4) {return false}
+            
+            
+        }
+        
+        //Bool
+        return true
+    }
+    
 
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-        if(newLocation.distanceFromLocation(oldLocation)<100){
+       
+        var tempDistance = newLocation.distanceFromLocation(oldLocation)
+        if(tempDistance < 15){
             if(oldLocation == nil){return}
+            if(newLocation == nil){return}
+            if(!self.filterBadResults(newLocation)) {return}
+            
             var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - oldLocation.timestamp.timeIntervalSince1970
-            var distance = newLocation.distanceFromLocation(oldLocation)
-            self.speed = distance / timePassed
+            var newSpeed = tempDistance / timePassed
+            self.speed = tempDistance / timePassed
+
             self.currentLocation = newLocation
-            self.distanceDelta = distance
+            self.distanceDelta = tempDistance
+            
+        }
+        else{
+           println("\(tempDistance)")
         }
 
     }

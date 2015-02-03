@@ -1,20 +1,20 @@
 //
-//  Run.swift
+//  RunnerApp.swift
 //  RunnerApp
 //
-//  Created by sadmin on 1/17/15.
+//  Created by Janusz Chudzynski on 2/2/15.
 //  Copyright (c) 2015 Janusz Chudzynski. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
-class Run: NSManagedObject {
+class RunnerApp: NSManagedObject {
 
     @NSManaged var averagespeed: NSNumber
-    @NSManaged var started: NSDate
     @NSManaged var distance: NSNumber
-    @NSManaged var finished: NSDate
+    @NSManaged var started: NSDate
+    @NSManaged var time: NSNumber
     @NSManaged var locations: NSOrderedSet
 
 }

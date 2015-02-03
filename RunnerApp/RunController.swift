@@ -33,6 +33,9 @@ protocol RunProtocol{
     func timeUpdated(time:String)
     func statusUpdated(status: CLAuthorizationStatus)
     func stateUpdated(state:runstate)
+
+    
+    
 }
 
 class RunController: NSObject {
@@ -42,6 +45,8 @@ class RunController: NSObject {
     var time:Int
     var timer:NSTimer
     var distance:Double
+    var dataManager:DataController = DataController()
+    
     var state : runstate{
         didSet{
             for observer in self.observers {
@@ -93,6 +98,7 @@ class RunController: NSObject {
         locationController.addObserver(self, forKeyPath: "status", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "speed", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "distanceDelta", options:.New , context: nil)
+        locationController.addObserver(self, forKeyPath: "currentLocation", options:.New , context: nil)
         
         self.addObserver(self, forKeyPath: "state", options:.New , context: nil)
         self.locationController.startUpdating();
@@ -107,11 +113,9 @@ class RunController: NSObject {
             self.resume()
             return
         }
-        
         if(self.state == runstate.stopped){
             self.time = 0
             self.distance = 0.0
-            
         }
 
         if !self.timer.valid
@@ -120,16 +124,19 @@ class RunController: NSObject {
             
             var nsrunloop = NSRunLoop();
             nsrunloop.addTimer(self.timer, forMode: NSRunLoopCommonModes)
-
         }
+        
         self.state = runstate.active
-  
+        //create new data manager
+        dataManager.startRun()
+
     }
     
     func timerTick()->Void
     {
         self.time += 1
         var displayText = convertTimeToText(self.time)
+
         for observer in self.observers {
             observer.timeUpdated(displayText)
         }
@@ -137,11 +144,13 @@ class RunController: NSObject {
     
     func stop(){
         //stop running
+        dataManager.updateTime(self.time)
+        dataManager.stopRun()
+
         self.time = 0
         self.timer.invalidate()
         self.state = runstate.stopped
-        
-        //self.locationController.stopUpdating();
+
     }
     
     func pause(){
@@ -260,6 +269,10 @@ class RunController: NSObject {
                 observer.stateUpdated(self.state)
             }
     
+        }
+        if(keyPath == "currentLocation"){
+            var newLocation: CLLocation  = change[NSKeyValueChangeNewKey] as CLLocation
+            self.dataManager.updateLocation(newLocation)
         }
         
     }

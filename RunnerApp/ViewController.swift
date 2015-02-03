@@ -11,9 +11,8 @@ import MapKit
 import CoreLocation
 class ViewController: UIViewController, RunProtocol {
     private var myContext = 0
-  
- //   private var locationController:LocationController = LocationController()
     private var runController:RunController = RunController()
+    private var mapController:MapViewController?
     
     @IBOutlet weak var speedometer: SpeedomoterView!
     @IBOutlet weak var startButtonOutlet: startButton!
@@ -23,7 +22,27 @@ class ViewController: UIViewController, RunProtocol {
     @IBOutlet weak var stopButtonOutlet: stopButton!
     @IBOutlet weak var pauseButtonOutlet: pauseButton!
    
+ 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+      
+
+    }
     
+    @IBAction func showMap(sender: AnyObject) {
+      
+  
+        
+        if let vc:MapViewController = self.mapController {
+            vc.dataController = self.runController.dataManager
+            
+            self.presentViewController(
+            vc, animated: true) { () -> Void in
+          
+                
+            }
+        }
+    }
     //Run Protocol
     func speedUpdated(speed: String) {
         self.speedometer.topText = "\(speed)"
@@ -92,7 +111,11 @@ class ViewController: UIViewController, RunProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.runController.addRunObserver(self)
+      
+          self.runController.addRunObserver(self)
+        mapController = storyboard!.instantiateViewControllerWithIdentifier(
+            "map") as? MapViewController
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"pattern")!)
         //set default values
         self.speedometer.topText = "0.0"
@@ -116,7 +139,7 @@ class ViewController: UIViewController, RunProtocol {
         var status:CLAuthorizationStatus =  runController.locationStatus
         //switch case that detrmines the error
 
-        if(status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse)
+        if(status == CLAuthorizationStatus.Authorized || status == CLAuthorizationStatus.AuthorizedWhenInUse)
         {
             //display warning
             println("now it's authorized");

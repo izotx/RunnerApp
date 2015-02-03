@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,97 +19,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-So-avi" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="106" y="143" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvR-So-avi" customClass="startButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="99" y="136" width="75" height="75"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="P2J-U8-PX5"/>
-                                    <constraint firstAttribute="height" constant="65" id="zK5-Pd-Ktk"/>
+                                    <constraint firstAttribute="width" constant="75" id="Ipa-Y4-pkP"/>
+                                    <constraint firstAttribute="height" constant="75" id="dPP-Vy-hiy"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="P2J-U8-PX5"/>
-                                        <exclude reference="zK5-Pd-Ktk"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="P2J-U8-PX5"/>
-                                        <include reference="zK5-Pd-Ktk"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="startRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rmi-bk-v71"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yw-Bun" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="334" y="88" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="207" y="81" width="75" height="75"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="UMT-xH-3I0">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="75" id="zNn-wQ-oyF">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
+                                    <constraint firstAttribute="height" constant="75" id="rGW-mj-9C3"/>
+                                    <constraint firstAttribute="width" constant="75" id="xYq-h4-MGZ"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="UMT-xH-3I0"/>
-                                        <exclude reference="zNn-wQ-oyF"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="UMT-xH-3I0"/>
-                                        <include reference="zNn-wQ-oyF"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="stopRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x5e-iJ-tJy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-Bg-tfc" customClass="pauseButton" customModule="RunnerApp" customModuleProvider="target">
-                                <rect key="frame" x="214" y="88" width="60" height="60"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="cCe-up-VGZ">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="75" id="iST-3Z-eSO">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="cCe-up-VGZ"/>
-                                        <exclude reference="iST-3Z-eSO"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="cCe-up-VGZ"/>
-                                        <include reference="iST-3Z-eSO"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="pauseRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B64-1A-Dtr"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-pU-cnB" customClass="SingleLabel" customModule="RunnerApp">
-                                <rect key="frame" x="76" y="399" width="121" height="121"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="KIj-lr-oiG"/>
@@ -128,7 +69,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-51-KDs" customClass="SpeedomoterView" customModule="RunnerApp">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <rect key="frame" x="173" y="173" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="255" id="60e-dF-vXS"/>
@@ -139,12 +80,8 @@
                                 <rect key="frame" x="429" y="135" width="75" height="75"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="8zZ-YO-nvC">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="75" id="WOM-fX-5kD">
-                                        <variation key="heightClass=regular" constant="65"/>
-                                    </constraint>
+                                    <constraint firstAttribute="height" constant="75" id="5sg-EL-0yf"/>
+                                    <constraint firstAttribute="width" constant="75" id="b9n-TZ-Jcs"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -154,26 +91,6 @@
                                     <action selector="metricMode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tdG-sh-hfH"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-DC-BJx" customClass="DoubleLabel" customModule="RunnerApp">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="H5o-C7-nT0"/>
-                                    <constraint firstAttribute="height" constant="165" id="on0-Zb-bMZ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="H5o-C7-nT0"/>
-                                        <exclude reference="on0-Zb-bMZ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="H5o-C7-nT0"/>
-                                        <include reference="on0-Zb-bMZ"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runner App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-x0-VMF">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
@@ -194,88 +111,140 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-yw-Bun" customClass="stopButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="318" y="81" width="75" height="75"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="2Uc-Tx-JrU"/>
+                                    <constraint firstAttribute="height" constant="75" id="4Hj-D1-5D7"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRun:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x5e-iJ-tJy"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4P-DC-BJx" customClass="DoubleLabel" customModule="RunnerApp">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="H5o-C7-nT0">
+                                        <variation key="heightClass=regular" constant="164"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="on0-Zb-bMZ">
+                                        <variation key="heightClass=regular" constant="164"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H5o-C7-nT0"/>
+                                        <exclude reference="on0-Zb-bMZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="H5o-C7-nT0"/>
+                                        <include reference="on0-Zb-bMZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-Lv-MJO" customClass="mphButton" customModule="RunnerApp" customModuleProvider="target">
+                                <rect key="frame" x="429" y="135" width="75" height="75"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="69T-yE-iuh"/>
+                                    <constraint firstAttribute="width" constant="75" id="d0m-TG-Bbu"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VGB-aS-32O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="bTF-x0-VMF" secondAttribute="centerX" id="1Mf-zb-i9e"/>
-                            <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-188" id="1Xr-ov-xH0">
-                                <variation key="heightClass=regular" constant="-184.5"/>
-                            </constraint>
-                            <constraint firstItem="MvR-So-avi" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-172" id="68e-9o-bmh">
-                                <variation key="heightClass=regular" constant="-109.5"/>
+                            <constraint firstItem="9k4-Lv-MJO" firstAttribute="leading" secondItem="V8e-51-KDs" secondAttribute="trailing" constant="23" id="5hB-wG-ieQ">
+                                <variation key="heightClass=regular" constant="-18"/>
                             </constraint>
                             <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="0nj-rA-FVy" secondAttribute="centerY" constant="127.5" id="79I-Mf-rqM">
-                                <variation key="heightClass=regular" constant="127.5"/>
+                                <variation key="heightClass=regular" constant="138"/>
                             </constraint>
-                            <constraint firstItem="3ia-yw-Bun" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="89" id="BIJ-SE-6Bk">
-                                <variation key="heightClass=regular" constant="39.5"/>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="3ia-yw-Bun" secondAttribute="centerX" constant="-55.5" id="9lg-52-88z">
+                                <variation key="heightClass=regular" constant="-37"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" id="BMd-w7-KVX"/>
-                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="D4P-DC-BJx" secondAttribute="centerX" constant="-109.5" id="Bc0-mg-9gz">
-                                <variation key="heightClass=regular" constant="-89.5"/>
-                            </constraint>
-                            <constraint firstItem="bTF-x0-VMF" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="35" id="H8d-3J-cwX"/>
+                            <constraint firstAttribute="centerX" secondItem="bTF-x0-VMF" secondAttribute="centerX" id="E2W-Fb-ai2"/>
+                            <constraint firstItem="bTF-x0-VMF" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="JF0-o9-0DX"/>
                             <constraint firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" id="NF2-Iq-eKV"/>
-                            <constraint firstItem="oO5-Bg-tfc" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-72" id="RZW-ux-s73">
-                                <variation key="heightClass=regular" constant="-39.5"/>
+                            <constraint firstItem="9k4-Lv-MJO" firstAttribute="top" secondItem="0nj-rA-FVy" secondAttribute="bottom" constant="22" id="PbW-oN-Pzn">
+                                <variation key="heightClass=regular" constant="14"/>
                             </constraint>
-                            <constraint firstItem="3ia-yw-Bun" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-198" id="THz-uP-u5f">
-                                <variation key="heightClass=regular" constant="-184.5"/>
+                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerY" secondItem="D4P-DC-BJx" secondAttribute="centerY" constant="178" id="RTS-6G-yq3">
+                                <variation key="heightClass=regular" constant="-41.5"/>
                             </constraint>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="oO5-Bg-tfc" secondAttribute="centerY" constant="182" id="RWW-S3-hTS"/>
                             <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="0nj-rA-FVy" secondAttribute="centerX" constant="-166.5" id="V5X-pW-EGf">
-                                <variation key="heightClass=regular" constant="-109.5"/>
+                                <variation key="heightClass=regular" constant="-120"/>
                             </constraint>
-                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-171.5" id="eDT-oS-9sL">
-                                <variation key="heightClass=regular" constant="-90.5"/>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="3ia-yw-Bun" secondAttribute="centerY" constant="181.5" id="YpF-in-p2U">
+                                <variation key="heightClass=regular" constant="183"/>
                             </constraint>
-                            <constraint firstItem="MvR-So-avi" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-135" id="ej7-6k-iEH">
-                                <variation key="heightClass=regular" constant="-127.5"/>
+                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerX" secondItem="D4P-DC-BJx" secondAttribute="centerX" constant="-141" id="ecP-Jc-WAA">
+                                <variation key="heightClass=regular" constant="-220.5"/>
                             </constraint>
-                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerY" secondItem="D4P-DC-BJx" secondAttribute="centerY" constant="-177.5" id="jP4-a0-knl">
-                                <variation key="heightClass=regular" constant="-193.5"/>
+                            <constraint firstAttribute="centerY" secondItem="D4P-DC-BJx" secondAttribute="centerY" id="gPj-zJ-dY4">
+                                <variation key="heightClass=regular" constant="-202"/>
                             </constraint>
-                            <constraint firstItem="J5n-pU-cnB" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="127.5" id="oXz-yS-YuJ">
-                                <variation key="heightClass=regular" constant="177.5"/>
+                            <constraint firstItem="MvR-So-avi" firstAttribute="centerX" secondItem="V8e-51-KDs" secondAttribute="centerX" constant="-164" id="i3h-R9-hyw">
+                                <variation key="heightClass=regular" constant="-141"/>
+                            </constraint>
+                            <constraint firstItem="MvR-So-avi" firstAttribute="centerY" secondItem="V8e-51-KDs" secondAttribute="centerY" constant="-127" id="lAX-Vw-z4k">
+                                <variation key="heightClass=regular" constant="-120"/>
+                            </constraint>
+                            <constraint firstItem="V8e-51-KDs" firstAttribute="centerX" secondItem="oO5-Bg-tfc" secondAttribute="centerX" constant="56" id="nhM-2N-W1b">
+                                <variation key="heightClass=regular" constant="58"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="D4P-DC-BJx" secondAttribute="centerX" id="uEh-Vc-pNK">
+                                <variation key="heightClass=regular" constant="-103"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="D4P-DC-BJx"/>
                                 <exclude reference="bTF-x0-VMF"/>
+                                <exclude reference="D4P-DC-BJx"/>
+                                <exclude reference="9k4-Lv-MJO"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1Mf-zb-i9e"/>
-                                <exclude reference="H8d-3J-cwX"/>
-                                <exclude reference="68e-9o-bmh"/>
-                                <exclude reference="ej7-6k-iEH"/>
-                                <exclude reference="1Xr-ov-xH0"/>
-                                <exclude reference="RZW-ux-s73"/>
-                                <exclude reference="Bc0-mg-9gz"/>
-                                <exclude reference="jP4-a0-knl"/>
-                                <exclude reference="BIJ-SE-6Bk"/>
-                                <exclude reference="THz-uP-u5f"/>
-                                <exclude reference="eDT-oS-9sL"/>
-                                <exclude reference="oXz-yS-YuJ"/>
+                                <exclude reference="E2W-Fb-ai2"/>
+                                <exclude reference="JF0-o9-0DX"/>
+                                <exclude reference="RTS-6G-yq3"/>
+                                <exclude reference="ecP-Jc-WAA"/>
+                                <exclude reference="5hB-wG-ieQ"/>
+                                <exclude reference="PbW-oN-Pzn"/>
+                                <exclude reference="gPj-zJ-dY4"/>
+                                <exclude reference="uEh-Vc-pNK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="D4P-DC-BJx"/>
                                 <include reference="bTF-x0-VMF"/>
+                                <include reference="D4P-DC-BJx"/>
+                                <include reference="9k4-Lv-MJO"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1Mf-zb-i9e"/>
-                                <include reference="H8d-3J-cwX"/>
-                                <include reference="68e-9o-bmh"/>
-                                <include reference="ej7-6k-iEH"/>
-                                <include reference="1Xr-ov-xH0"/>
-                                <include reference="RZW-ux-s73"/>
-                                <include reference="Bc0-mg-9gz"/>
-                                <include reference="jP4-a0-knl"/>
-                                <include reference="BIJ-SE-6Bk"/>
-                                <include reference="THz-uP-u5f"/>
-                                <include reference="eDT-oS-9sL"/>
-                                <include reference="oXz-yS-YuJ"/>
+                                <include reference="E2W-Fb-ai2"/>
+                                <include reference="JF0-o9-0DX"/>
+                                <include reference="RTS-6G-yq3"/>
+                                <include reference="ecP-Jc-WAA"/>
+                                <include reference="5hB-wG-ieQ"/>
+                                <include reference="PbW-oN-Pzn"/>
+                                <include reference="gPj-zJ-dY4"/>
+                                <include reference="uEh-Vc-pNK"/>
                             </mask>
                         </variation>
                     </view>
@@ -292,6 +261,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="57"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="HMg-xg-Mdj">
+            <objects>
+                <viewController storyboardIdentifier="map" id="dIi-ef-obz" customClass="MapViewController" customModule="RunnerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gtg-yZ-nfw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mbu-mo-4ve"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y3n-a7-c8u">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pEO-bU-Lae">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJR-ll-tl5" customClass="mphButton" customModule="RunnerApp">
+                                <rect key="frame" x="429" y="135" width="75" height="75"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="GRd-Zp-Jcj"/>
+                                    <constraint firstAttribute="height" constant="75" id="gZz-Fh-D0Y"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="dIi-ef-obz" eventType="touchUpInside" id="i4q-fo-CRS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pEO-bU-Lae" firstAttribute="leading" secondItem="y3n-a7-c8u" secondAttribute="leadingMargin" id="3vs-tJ-epv">
+                                <variation key="heightClass=regular" constant="-16"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="pEO-bU-Lae" secondAttribute="trailing" id="Noh-4N-wcS">
+                                <variation key="heightClass=regular" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="TJR-ll-tl5" firstAttribute="top" secondItem="y3n-a7-c8u" secondAttribute="topMargin" constant="15" id="W1m-YY-Fmp"/>
+                            <constraint firstItem="pEO-bU-Lae" firstAttribute="top" secondItem="y3n-a7-c8u" secondAttribute="topMargin" id="gud-9y-2pJ"/>
+                            <constraint firstItem="mbu-mo-4ve" firstAttribute="top" secondItem="pEO-bU-Lae" secondAttribute="bottom" id="klX-uo-WZC"/>
+                            <constraint firstAttribute="centerX" secondItem="TJR-ll-tl5" secondAttribute="centerX" id="lZw-Es-wl3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pEO-bU-Lae"/>
+                                <exclude reference="TJR-ll-tl5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3vs-tJ-epv"/>
+                                <exclude reference="Noh-4N-wcS"/>
+                                <exclude reference="gud-9y-2pJ"/>
+                                <exclude reference="W1m-YY-Fmp"/>
+                                <exclude reference="lZw-Es-wl3"/>
+                                <exclude reference="klX-uo-WZC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="pEO-bU-Lae"/>
+                                <include reference="TJR-ll-tl5"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3vs-tJ-epv"/>
+                                <include reference="Noh-4N-wcS"/>
+                                <include reference="gud-9y-2pJ"/>
+                                <include reference="W1m-YY-Fmp"/>
+                                <include reference="lZw-Es-wl3"/>
+                                <include reference="klX-uo-WZC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="TJR-ll-tl5" id="vtj-dt-iat"/>
+                        <outlet property="mapView" destination="pEO-bU-Lae" id="rEw-ev-WrU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1R-4S-Vn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="770.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fGC-Qu-1ZJ">

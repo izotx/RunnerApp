@@ -17,6 +17,23 @@
 		2422AD511A7DCED5004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */; };
 		2422AD521A7DCFDF004F3A03 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
 		24235F0C1A7E13A300C401BB /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 24235F0B1A7E13A300C401BB /* pattern.png */; };
+		24950AA31A8069860062C9EA /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AA21A8069860062C9EA /* CoreDataController.swift */; };
+		24950AA71A8075F70062C9EA /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AA21A8069860062C9EA /* CoreDataController.swift */; };
+		24950AA81A80845C0062C9EA /* RunnerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */; };
+		24950AAA1A8084D70062C9EA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AA91A8084D70062C9EA /* Location.swift */; };
+		24950AAB1A8084D70062C9EA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AA91A8084D70062C9EA /* Location.swift */; };
+		24950AAD1A8084D70062C9EA /* RunnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AAC1A8084D70062C9EA /* RunnerApp.swift */; };
+		24950AAE1A8084D70062C9EA /* RunnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AAC1A8084D70062C9EA /* RunnerApp.swift */; };
+		24950AB01A80853B0062C9EA /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AAF1A80853B0062C9EA /* Run.swift */; };
+		24950AB11A80853B0062C9EA /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AAF1A80853B0062C9EA /* Run.swift */; };
+		24950AB31A8095350062C9EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AB21A8095350062C9EA /* MapViewController.swift */; };
+		24950AB41A8095350062C9EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24950AB21A8095350062C9EA /* MapViewController.swift */; };
+		24950AB51A80BD2B0062C9EA /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
+		24950AB61A80BD520062C9EA /* RunnerGraphicsStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */; };
+		24950AB71A80BD5A0062C9EA /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
+		24950AB81A80BD5A0062C9EA /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
+		24950AB91A80BD600062C9EA /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD291A7DC1F4004F3A03 /* Labels.swift */; };
+		24950ABA1A80BD610062C9EA /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2422AD291A7DC1F4004F3A03 /* Labels.swift */; };
 		24C512771A7EEE100084AE24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C512761A7EEE100084AE24 /* Images.xcassets */; };
 		24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
 		24D1B2821A775203006D03B3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
@@ -30,10 +47,6 @@
 		8250F7521A6A5AFB007962C3 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7501A6A5AFB007962C3 /* LocationController.swift */; };
 		8250F7541A6B4810007962C3 /* RunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7531A6B480F007962C3 /* RunController.swift */; };
 		8250F7551A6B4810007962C3 /* RunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7531A6B480F007962C3 /* RunController.swift */; };
-		82EBFD4F1A6B620200AC002F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD4E1A6B620200AC002F /* Location.swift */; };
-		82EBFD501A6B620200AC002F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD4E1A6B620200AC002F /* Location.swift */; };
-		82EBFD521A6B620300AC002F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD511A6B620300AC002F /* Run.swift */; };
-		82EBFD531A6B620300AC002F /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBFD511A6B620300AC002F /* Run.swift */; };
 		82EBFD541A6B64F000AC002F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +115,11 @@
 		2422AD421A7DCDC2004F3A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2422AD431A7DCDC2004F3A03 /* MyCustomViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewsTests.swift; sourceTree = "<group>"; };
 		24235F0B1A7E13A300C401BB /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
+		24950AA21A8069860062C9EA /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		24950AA91A8084D70062C9EA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		24950AAC1A8084D70062C9EA /* RunnerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerApp.swift; sourceTree = "<group>"; };
+		24950AAF1A80853B0062C9EA /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		24950AB21A8095350062C9EA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		24C512761A7EEE100084AE24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedometerStyleKit.swift; path = art/SpeedometerStyleKit.swift; sourceTree = "<group>"; };
 		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -119,8 +137,6 @@
 		8250F7531A6B480F007962C3 /* RunController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunController.swift; sourceTree = "<group>"; };
 		8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		82EBFD4E1A6B620200AC002F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		82EBFD511A6B620300AC002F /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		82EBFD5B1A6BF0F000AC002F /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		82EBFD801A6BF78D00AC002F /* RunnerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RunnerApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,8 +214,6 @@
 			children = (
 				24235F0B1A7E13A300C401BB /* pattern.png */,
 				2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */,
-				82EBFD511A6B620300AC002F /* Run.swift */,
-				82EBFD4E1A6B620200AC002F /* Location.swift */,
 				24D1B2811A775203006D03B3 /* Buttons.swift */,
 				24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */,
 				2422AD291A7DC1F4004F3A03 /* Labels.swift */,
@@ -231,9 +245,14 @@
 				8250F7501A6A5AFB007962C3 /* LocationController.swift */,
 				8250F7321A6A5AB1007962C3 /* ViewController.swift */,
 				8250F7531A6B480F007962C3 /* RunController.swift */,
+				24950AA21A8069860062C9EA /* CoreDataController.swift */,
 				8250F7341A6A5AB1007962C3 /* Main.storyboard */,
+				24950AB21A8095350062C9EA /* MapViewController.swift */,
 				8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */,
 				8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */,
+				24950AAF1A80853B0062C9EA /* Run.swift */,
+				24950AAC1A8084D70062C9EA /* RunnerApp.swift */,
+				24950AA91A8084D70062C9EA /* Location.swift */,
 				8250F72B1A6A5AB1007962C3 /* Supporting Files */,
 				8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */,
 				8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */,
@@ -458,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2422AD521A7DCFDF004F3A03 /* Buttons.swift in Sources */,
+				24950AB81A80BD5A0062C9EA /* SpeedometerStyleKit.swift in Sources */,
+				24950ABA1A80BD610062C9EA /* Labels.swift in Sources */,
 				2422AD511A7DCED5004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,16 +496,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D1B2821A775203006D03B3 /* Buttons.swift in Sources */,
+				24950AAD1A8084D70062C9EA /* RunnerApp.swift in Sources */,
+				24950AB01A80853B0062C9EA /* Run.swift in Sources */,
+				24950AAA1A8084D70062C9EA /* Location.swift in Sources */,
 				2422AD281A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift in Sources */,
+				24950AA31A8069860062C9EA /* CoreDataController.swift in Sources */,
 				8250F7541A6B4810007962C3 /* RunController.swift in Sources */,
 				24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */,
 				8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */,
 				8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */,
 				8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */,
 				2422AD2A1A7DC1F4004F3A03 /* Labels.swift in Sources */,
-				82EBFD4F1A6B620200AC002F /* Location.swift in Sources */,
-				82EBFD521A6B620300AC002F /* Run.swift in Sources */,
 				8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */,
+				24950AB31A8095350062C9EA /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,11 +517,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EBFD541A6B64F000AC002F /* AppDelegate.swift in Sources */,
+				24950AB11A80853B0062C9EA /* Run.swift in Sources */,
+				24950AA81A80845C0062C9EA /* RunnerApp.xcdatamodeld in Sources */,
+				24950AB51A80BD2B0062C9EA /* Buttons.swift in Sources */,
+				24950AB41A8095350062C9EA /* MapViewController.swift in Sources */,
 				8250F7551A6B4810007962C3 /* RunController.swift in Sources */,
+				24950AA71A8075F70062C9EA /* CoreDataController.swift in Sources */,
 				8250F7521A6A5AFB007962C3 /* LocationController.swift in Sources */,
-				82EBFD501A6B620200AC002F /* Location.swift in Sources */,
-				82EBFD531A6B620300AC002F /* Run.swift in Sources */,
+				24950AB71A80BD5A0062C9EA /* SpeedometerStyleKit.swift in Sources */,
+				24950AAE1A8084D70062C9EA /* RunnerApp.swift in Sources */,
+				24950AB91A80BD600062C9EA /* Labels.swift in Sources */,
 				8250F7471A6A5AB1007962C3 /* RunnerAppTests.swift in Sources */,
+				24950AAB1A8084D70062C9EA /* Location.swift in Sources */,
+				24950AB61A80BD520062C9EA /* RunnerGraphicsStyleKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +675,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -660,7 +693,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -685,7 +718,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -696,7 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

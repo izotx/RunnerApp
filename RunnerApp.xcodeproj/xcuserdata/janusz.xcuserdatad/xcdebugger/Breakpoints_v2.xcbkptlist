@@ -19,22 +19,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RunnerApp/ViewController.swift"
-            timestampString = "444532861.160584"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "distanceUpdated(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Labels.swift"
             timestampString = "444532861.160584"
             startingColumnNumber = "9223372036854775807"
@@ -124,22 +108,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunnerApp/ViewController.swift"
-            timestampString = "444532861.160584"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "speedUpdated(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -159,12 +127,12 @@
                   symbolName = "RunnerApp.CustomButton.observeValueForKeyPath (RunnerApp.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
                   moduleName = "RunnerApp"
                   urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444535490.707865"
+                  timestampString = "444644779.920511"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "542">
+                  offsetFromSymbolStart = "539">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -173,12 +141,12 @@
                   symbolName = "MyCustomViews.CustomButton.observeValueForKeyPath (MyCustomViews.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
                   moduleName = "MyCustomViews"
                   urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444535490.710442"
+                  timestampString = "444644780.244728"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
                   endingLineNumber = "50"
-                  offsetFromSymbolStart = "542">
+                  offsetFromSymbolStart = "539">
                </Location>
             </Locations>
          </BreakpointContent>
