@@ -21,6 +21,7 @@ class ViewController: UIViewController, RunProtocol {
     @IBOutlet weak var speedStateButton: mphButton!
     @IBOutlet weak var stopButtonOutlet: stopButton!
     @IBOutlet weak var pauseButtonOutlet: pauseButton!
+    @IBOutlet weak var mapButtonOutlet: mphButton!
    
  
     required init(coder aDecoder: NSCoder) {
@@ -123,6 +124,7 @@ class ViewController: UIViewController, RunProtocol {
         self.timer.text = "00:00:00"
         self.distanceView.topText = "0.0"
         self.distanceView.bottomText = "km"
+        self.mapButtonOutlet.text = "Map"
         
         self.speedometer.alpha = 0
         self.timer.alpha = 0

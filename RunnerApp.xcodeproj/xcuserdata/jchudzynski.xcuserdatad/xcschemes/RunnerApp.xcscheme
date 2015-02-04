@@ -34,6 +34,20 @@
                ReferencedContainer = "container:RunnerApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2422AD391A7DCDC1004F3A03"
+               BuildableName = "MyCustomViewsTests.xctest"
+               BlueprintName = "MyCustomViewsTests"
+               ReferencedContainer = "container:RunnerApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "8250F73F1A6A5AB1007962C3"
                BuildableName = "RunnerAppTests.xctest"
                BlueprintName = "RunnerAppTests"
+               ReferencedContainer = "container:RunnerApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2422AD391A7DCDC1004F3A03"
+               BuildableName = "MyCustomViewsTests.xctest"
+               BlueprintName = "MyCustomViewsTests"
                ReferencedContainer = "container:RunnerApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

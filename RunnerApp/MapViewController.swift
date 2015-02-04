@@ -43,32 +43,38 @@ class MapViewController: UIViewController, LocationUpdated, MKMapViewDelegate{
 
     func updateRun(run: Run?) {
         
-        println("map updated")
+
         //display the overlay
+        var maxx:Float = -180
+        var maxy:Float = -90
+        var minx:Float = 180
+        var miny:Float = 90
+        
         if let tempRun:Run = run {
         
            var children =  tempRun.mutableOrderedSetValueForKey("locations")
-            println("c ciybt \(children.count)")
-            
             var points : [CLLocationCoordinate2D] = []
             for(var i = 0; i<children.count; i++) {
-                
                 var loc:Location = children.objectAtIndex(i) as Location
                 var loc2d =   CLLocationCoordinate2D(latitude: CLLocationDegrees(loc.latitude.floatValue), longitude: CLLocationDegrees(loc.longitude.floatValue))
-                points.append(loc2d)
-                
+                    points.append(loc2d)
+                if(maxy < loc.latitude.floatValue ) {maxy = loc.latitude.floatValue}
+                if(maxx < loc.longitude.floatValue ) {maxx = loc.longitude.floatValue}
+                if(minx > loc.longitude.floatValue ) {minx = loc.longitude.floatValue}
+                if(miny > loc.latitude.floatValue ) {miny = loc.latitude.floatValue}
             }
-            
-            var polygon: MKPolyline = MKPolyline(coordinates: &points, count: points.count)
 
+            var lonDelta:CLLocationDegrees  = CLLocationDegrees(maxx-minx)
+            var latDelta: CLLocationDegrees = CLLocationDegrees(maxy-miny)
+            var centerAvLat = CLLocationDegrees((maxy+miny)/2.0)
+            var centerAvLon = CLLocationDegrees((maxx+minx)/2.0)
+            var center = CLLocationCoordinate2D(latitude: centerAvLat, longitude:centerAvLon)
+            var span = MKCoordinateSpanMake(latDelta*1.7, lonDelta*1.7)
+            var mkregion = MKCoordinateRegionMake(center, span)
+            self.mapView.setRegion(mkregion, animated: true)
+
+            var polygon: MKPolyline = MKPolyline(coordinates: &points, count: points.count)
             self.mapView.addOverlay(polygon)
-            
-            
-          //  var cl:CLLocationCoordinate2D =
-          // var polyline = MKPolyline(
-          
-            
-            
             
         }
     }

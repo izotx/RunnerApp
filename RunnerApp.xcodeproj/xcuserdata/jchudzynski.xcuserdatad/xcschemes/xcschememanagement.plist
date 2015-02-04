@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MyCustomViews.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>RunnerApp Watch App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2422AD2F1A7DCDC1004F3A03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2422AD391A7DCDC1004F3A03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8250F7271A6A5AB1007962C3</key>
 		<dict>
 			<key>primary</key>

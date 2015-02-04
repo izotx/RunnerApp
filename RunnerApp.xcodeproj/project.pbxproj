@@ -37,6 +37,7 @@
 		24C512771A7EEE100084AE24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24C512761A7EEE100084AE24 /* Images.xcassets */; };
 		24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
 		24D1B2821A775203006D03B3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
+		40AFE7B31A81527C004F28F7 /* circle_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AFE7B21A81527C004F28F7 /* circle_main.png */; };
 		8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
 		8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */; };
 		8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7321A6A5AB1007962C3 /* ViewController.swift */; };
@@ -123,6 +124,7 @@
 		24C512761A7EEE100084AE24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedometerStyleKit.swift; path = art/SpeedometerStyleKit.swift; sourceTree = "<group>"; };
 		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		40AFE7B21A81527C004F28F7 /* circle_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle_main.png; path = art/images/circle_main.png; sourceTree = "<group>"; };
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F72C1A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				24235F0B1A7E13A300C401BB /* pattern.png */,
 				2422AD271A7A63F4004F3A03 /* RunnerGraphicsStyleKit.swift */,
 				24D1B2811A775203006D03B3 /* Buttons.swift */,
+				40AFE7B21A81527C004F28F7 /* circle_main.png */,
 				24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */,
 				2422AD291A7DC1F4004F3A03 /* Labels.swift */,
 				8250F72A1A6A5AB1007962C3 /* RunnerApp */,
@@ -407,6 +410,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 						};
 					};
 					8250F73F1A6A5AB1007962C3 = {
@@ -456,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24235F0C1A7E13A300C401BB /* pattern.png in Resources */,
+				40AFE7B31A81527C004F28F7 /* circle_main.png in Resources */,
 				8250F7361A6A5AB1007962C3 /* Main.storyboard in Resources */,
 				8250F73B1A6A5AB1007962C3 /* LaunchScreen.xib in Resources */,
 				24C512771A7EEE100084AE24 /* Images.xcassets in Resources */,

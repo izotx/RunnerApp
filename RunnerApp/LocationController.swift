@@ -69,16 +69,30 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     func filterBadResults(newLocation : CLLocation)->Bool{
         if (newLocation.horizontalAccuracy < 0) {
+            println("wrong reading horizontal accuracy \(newLocation.horizontalAccuracy))")
+
             return false
         
         }
         if (newLocation.horizontalAccuracy > 66) {
+            println("wrong reading: horizontal Accuracy \(newLocation.verticalAccuracy)")
+
             return false
         }
         
         if (newLocation.verticalAccuracy < 0) {
          //   return false
+          //   println("wrong reading vertical Accuracy \(newLocation.verticalAccuracy)")
             
+        }
+        
+        
+        var tempDistance = newLocation.distanceFromLocation(self.currentLocation)
+
+        if(tempDistance > 50){
+            println("wrong reading: Distance \(tempDistance)")
+          //  return false;
+        
         }
         
         if(self.currentLocation != nil){
@@ -86,11 +100,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             var tempDistance = newLocation.distanceFromLocation(self.currentLocation)
 
             var newSpeed = tempDistance / timePassed
-            println("\(newSpeed)")
-
-            if((newSpeed - self.speed) > 4) {return false}
+     
+            var speedDelta = newSpeed - self.speed
+            if((speedDelta) > 4) {
+             
+                println("wrong speed Accuracy \(speedDelta)")
             
-            
+            }
         }
         
         //Bool
@@ -100,24 +116,19 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
-       
-        var tempDistance = newLocation.distanceFromLocation(oldLocation)
-        if(tempDistance < 15){
+
             if(oldLocation == nil){return}
             if(newLocation == nil){return}
             if(!self.filterBadResults(newLocation)) {return}
             
             var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - oldLocation.timestamp.timeIntervalSince1970
+        
+            var tempDistance = newLocation.distanceFromLocation(self.currentLocation)
             var newSpeed = tempDistance / timePassed
             self.speed = tempDistance / timePassed
 
             self.currentLocation = newLocation
             self.distanceDelta = tempDistance
-            
-        }
-        else{
-           println("\(tempDistance)")
-        }
-
+        
     }
 }

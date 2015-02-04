@@ -99,6 +99,9 @@ class RunController: NSObject {
         locationController.addObserver(self, forKeyPath: "speed", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "distanceDelta", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "currentLocation", options:.New , context: nil)
+    
+        
+        
         
         self.addObserver(self, forKeyPath: "state", options:.New , context: nil)
         self.locationController.startUpdating();

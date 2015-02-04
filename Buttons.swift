@@ -18,8 +18,10 @@ protocol customButtonState{
  class CustomButton:UIButton{
     var delegate :customButtonState?
     
+    
     override  init(frame: CGRect) {
         self.userSelected = false
+    
         super.init(frame: frame)
     }
     
@@ -31,9 +33,12 @@ protocol customButtonState{
     
     required init(coder aDecoder: NSCoder) {
          self.userSelected = false
+        
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
-
+        self.setBackgroundImage(nil, forState: UIControlState.Normal)
+        
+        self.setImage(nil, forState: UIControlState.Normal)
         self.addObserver(self, forKeyPath: "selected", options:.New, context: nil);
         self.addObserver(self, forKeyPath: "highlighted", options:.New, context: nil);
         self.addObserver(self, forKeyPath: "userSelected", options:.New, context: nil);

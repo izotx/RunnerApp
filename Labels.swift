@@ -26,6 +26,8 @@ class SpeedomoterView:UIView{
         self.speed = 0
         
         super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor()
+
     }
     
     
@@ -77,8 +79,10 @@ class SingleLabel:UIView{
 
     required init(coder aDecoder: NSCoder) {
         self.text = ""
+
         super.init(coder: aDecoder)
-      
+        self.backgroundColor = UIColor.clearColor()
+
     }
     
     @IBInspectable var text:String {
@@ -99,6 +103,8 @@ class SingleLabel:UIView{
         self.bottomText = ""
         self.topText = ""
         super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor()
+
     }
 
     
