@@ -111,44 +111,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Buttons.swift"
-            timestampString = "444520437.424049"
+            filePath = "RunnerApp/LocationController.swift"
+            timestampString = "444835486.974117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "averageLocation(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RunnerApp.CustomButton.observeValueForKeyPath (RunnerApp.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
-                  moduleName = "RunnerApp"
-                  urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444667118.714338"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "428">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyCustomViews.CustomButton.observeValueForKeyPath (MyCustomViews.CustomButton)(Swift.String, ofObject : Swift.AnyObject, change : Swift.Dictionary&lt;ObjectiveC.NSObject, Swift.AnyObject&gt;, context : Swift.UnsafeMutablePointer&lt;()&gt;) -&gt; ()"
-                  moduleName = "MyCustomViews"
-                  urlString = "file:///Users/janusz/Desktop/Repositories/RunnerApp/Buttons.swift"
-                  timestampString = "444667119.352542"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "428">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunnerApp/LocationController.swift"
+            timestampString = "444835516.743328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "filterByAverage(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunnerApp/LocationController.swift"
+            timestampString = "444835556.016541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "averageLocation(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -57,6 +57,42 @@ class LocationController: NSObject, CLLocationManagerDelegate {
            self.direction = newHeading.trueHeading
     }
     
+    
+    func averageLocation(locs: [CLLocation]) -> CLLocation
+    {
+        var maxx:CLLocationDegrees = -180
+        var maxy:CLLocationDegrees = -90
+        var minx:CLLocationDegrees = 180
+        var miny:CLLocationDegrees = 90
+        
+//            var points : [CLLocationCoordinate2D] = []
+            for(var i = 0; i<locs.count; i++) {
+                var loc:CLLocation = locs[i]
+                
+                var loc2d = loc.coordinate
+             //   points.append(loc2d)
+                if(maxy < loc2d.latitude) {maxy = loc2d.latitude}
+                if(maxx < loc2d.longitude ) {maxx = loc2d.longitude}
+                if(minx > loc2d.longitude ) {minx = loc2d.longitude}
+                if(miny > loc2d.latitude ) {miny = loc2d.latitude}
+            
+                
+        
+        }
+            
+            var lonDelta:CLLocationDegrees  = CLLocationDegrees(maxx-minx)
+            var latDelta: CLLocationDegrees = CLLocationDegrees(maxy-miny)
+            var centerAvLat = CLLocationDegrees((maxy+miny)/2.0)
+            var centerAvLon = CLLocationDegrees((maxx+minx)/2.0)
+            //drop the element with a biggest distance to neighbors
+        
+        var cl:  CLLocation = CLLocation(latitude: centerAvLat, longitude: centerAvLon)
+
+        
+        
+        return cl
+    }
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
         self.status = status
@@ -66,6 +102,21 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             //self.locationManager.startUpdatingLocation()
         }
     }
+    
+    
+    var locations:[CLLocation] = []
+    func filterByAverage(loc: CLLocation )->(Bool, CLLocation){
+        locations.append(loc)
+        if(locations.count < 6 )
+        {
+             return (false, loc)
+        }
+
+        locations.removeAtIndex(0)
+        var cl = averageLocation(locations)
+        return (true, cl)
+    }
+    
     
     func filterBadResults(newLocation : CLLocation)->Bool{
         if (newLocation.horizontalAccuracy < 0) {
@@ -117,18 +168,20 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     /**This method will be use to track user's location*/
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!) {
 
-            if(oldLocation == nil){return}
-            if(newLocation == nil){return}
-            if(!self.filterBadResults(newLocation)) {return}
-            
-            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - oldLocation.timestamp.timeIntervalSince1970
+        //    if(oldLocation == nil){return}
+        //    if(newLocation == nil){return}
         
-            var tempDistance = newLocation.distanceFromLocation(self.currentLocation)
-            var newSpeed = tempDistance / timePassed
-            self.speed = tempDistance / timePassed
-
-            self.currentLocation = newLocation
-            self.distanceDelta = tempDistance
+            var avg = filterByAverage(newLocation)
+            if avg.0 == false {return}
+            var avgLocation = avg.1
+        
+         //   if !self.filterBadResults(newLocation) {return}
+            
+            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - avgLocation.timestamp.timeIntervalSince1970
+       
+            self.distanceDelta = avgLocation.distanceFromLocation(self.currentLocation)
+            self.speed = self.distanceDelta / timePassed
+            self.currentLocation = avgLocation
         
     }
 }

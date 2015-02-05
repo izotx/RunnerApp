@@ -43,7 +43,7 @@ class MapViewController: UIViewController, LocationUpdated, MKMapViewDelegate{
 
     func updateRun(run: Run?) {
         
-
+//@warning
         //display the overlay
         var maxx:Float = -180
         var maxy:Float = -90
