@@ -16,13 +16,16 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     dynamic var direction: CLLocationDirection
     dynamic var currentLocation:CLLocation?
     dynamic var distanceDelta:Double
-   
+    var lastTimestamp:NSDate
+    var locations:[CLLocation] = []
+    
     override init() {
         self.speed = 0
         self.direction = 0
+
        // self.currentLocation: = CLLocation();
         self.distanceDelta = 0
-        
+        self.lastTimestamp = NSDate()
         super.init();
         
         //check for permissions
@@ -60,7 +63,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     func averageLocation(locs: [CLLocation]) -> CLLocation
     {
-        var maxx:CLLocationDegrees = -180
+         var maxx:CLLocationDegrees = -180
         var maxy:CLLocationDegrees = -90
         var minx:CLLocationDegrees = 180
         var miny:CLLocationDegrees = 90
@@ -79,9 +82,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
                 
         
         }
-            
-            var lonDelta:CLLocationDegrees  = CLLocationDegrees(maxx-minx)
-            var latDelta: CLLocationDegrees = CLLocationDegrees(maxy-miny)
             var centerAvLat = CLLocationDegrees((maxy+miny)/2.0)
             var centerAvLon = CLLocationDegrees((maxx+minx)/2.0)
             //drop the element with a biggest distance to neighbors
@@ -104,7 +104,8 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     
-    var locations:[CLLocation] = []
+    
+   
     func filterByAverage(loc: CLLocation )->(Bool, CLLocation){
         locations.append(loc)
         if(locations.count < 6 )
@@ -177,11 +178,12 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
          //   if !self.filterBadResults(newLocation) {return}
             
-            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - avgLocation.timestamp.timeIntervalSince1970
+            var timePassed : NSTimeInterval = newLocation.timestamp.timeIntervalSince1970 - self.lastTimestamp.timeIntervalSince1970
        
             self.distanceDelta = avgLocation.distanceFromLocation(self.currentLocation)
             self.speed = self.distanceDelta / timePassed
             self.currentLocation = avgLocation
-        
+            self.lastTimestamp = NSDate()
+
     }
 }

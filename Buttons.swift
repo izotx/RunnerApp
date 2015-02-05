@@ -54,10 +54,16 @@ protocol customButtonState{
         if(keyPath == "userSelected"){
             self.setNeedsDisplay();
         }
-        
-        
     }
     
+    
+    deinit{
+        self.removeObserver(self, forKeyPath: "selected");
+        self.removeObserver(self, forKeyPath: "highlighted");
+        self.removeObserver(self, forKeyPath: "userSelected");
+    }
+    
+
 //    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 //        self.nextResponder()?.touchesBegan(touches, withEvent: event)
 //        super.touchesBegan(touches, withEvent: event)

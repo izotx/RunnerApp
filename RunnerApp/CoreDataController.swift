@@ -23,6 +23,17 @@ class DataController{
        
     }
     
+    class func getRuns()->[Run]?{
+        var fetch:  NSFetchRequest  = NSFetchRequest(entityName:
+            "Run")
+        fetch.sortDescriptors = []
+        var dataController = DataController()
+        var result =    dataController.delegate.managedObjectContext?.executeFetchRequest(fetch, error: nil)
+        
+        return result as? [Run];
+        
+    }
+    
     func createNewRun()-> Run{
         var description: NSEntityDescription = NSEntityDescription.entityForName("Run", inManagedObjectContext: delegate.managedObjectContext!)!
         var object = NSManagedObject(entity: description, insertIntoManagedObjectContext: delegate.managedObjectContext)  as Run
@@ -42,14 +53,6 @@ class DataController{
     func startRun(){
         self.currentRun = createNewRun()
         self.currentRun!.started = NSDate()
-        
-        var fetch:  NSFetchRequest  = NSFetchRequest(entityName:
-        "Run")
-        fetch.sortDescriptors = []
-
-        var result =    self.delegate.managedObjectContext?.executeFetchRequest(fetch, error: nil)
-        println(result?.count);
-     
     }
     
     //resets run to default value?
@@ -89,16 +92,12 @@ class DataController{
     }
     
     func saveToDatabase(){
-       
-
         var error:NSError? = nil
         if(delegate.managedObjectContext!.save(&error)){
              self.observer?.updateRun(self.currentRun)
             return
         }
 
-       
-        
         println("Error: \(error)")
     
     }

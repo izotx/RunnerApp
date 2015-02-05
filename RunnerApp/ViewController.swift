@@ -13,6 +13,7 @@ class ViewController: UIViewController, RunProtocol {
     private var myContext = 0
     private var runController:RunController = RunController()
     private var mapController:MapViewController?
+    private var runHistory:RunsViewController?
     
     @IBOutlet weak var speedometer: SpeedomoterView!
     @IBOutlet weak var startButtonOutlet: startButton!
@@ -22,18 +23,25 @@ class ViewController: UIViewController, RunProtocol {
     @IBOutlet weak var stopButtonOutlet: stopButton!
     @IBOutlet weak var pauseButtonOutlet: pauseButton!
     @IBOutlet weak var mapButtonOutlet: mphButton!
-   
- 
+    @IBOutlet weak var historyButton: mphButton!
+  
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
       
-
     }
     
+    @IBAction func showHistory(sender: AnyObject) {
+        if(self.runHistory == nil){
+           self.runHistory = storyboard!.instantiateViewControllerWithIdentifier(
+                "runHistory") as? RunsViewController}
+
+        self.presentViewController(self.runHistory!, animated: true) { () -> Void in
+            
+        }
+    }
+
     @IBAction func showMap(sender: AnyObject) {
-      
-  
-        
         if let vc:MapViewController = self.mapController {
             vc.dataController = self.runController.dataManager
             
@@ -113,9 +121,11 @@ class ViewController: UIViewController, RunProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-          self.runController.addRunObserver(self)
+        self.runController.addRunObserver(self)
         mapController = storyboard!.instantiateViewControllerWithIdentifier(
             "map") as? MapViewController
+        
+        
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"pattern")!)
         //set default values
@@ -125,7 +135,8 @@ class ViewController: UIViewController, RunProtocol {
         self.distanceView.topText = "0.0"
         self.distanceView.bottomText = "km"
         self.mapButtonOutlet.text = "Map"
-        
+        self.historyButton.text = "Runs"
+
         self.speedometer.alpha = 0
         self.timer.alpha = 0
         self.distanceView.alpha = 0

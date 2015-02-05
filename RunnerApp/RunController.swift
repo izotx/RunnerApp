@@ -138,7 +138,7 @@ class RunController: NSObject {
     func timerTick()->Void
     {
         self.time += 1
-        var displayText = convertTimeToText(self.time)
+        var displayText = RunController.convertTimeToText(self.time)
 
         for observer in self.observers {
             observer.timeUpdated(displayText)
@@ -148,6 +148,7 @@ class RunController: NSObject {
     func stop(){
         //stop running
         dataManager.updateTime(self.time)
+        dataManager.updateDistance(self.distance)
         dataManager.stopRun()
 
         self.time = 0
@@ -197,7 +198,7 @@ class RunController: NSObject {
  }
     
     
-    func convertTimeToText(time:Int)->String{
+   class func convertTimeToText(time:Int)->String{
         var hours = time/(3600)
         var minutes = (time/60) - (hours * 60)
         var seconds = time%60
@@ -263,6 +264,8 @@ class RunController: NSObject {
             
             var newDistance: Double  = change[NSKeyValueChangeNewKey] as Double
             self.distance = self.distance + newDistance
+                dataManager.updateDistance(self.distance)
+            
             for observer in self.observers {
                 observer.distanceUpdated(getDistance(self.distance))
             }

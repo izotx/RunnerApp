@@ -38,6 +38,8 @@
 		24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */; };
 		24D1B2821A775203006D03B3 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D1B2811A775203006D03B3 /* Buttons.swift */; };
 		40AFE7B31A81527C004F28F7 /* circle_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 40AFE7B21A81527C004F28F7 /* circle_main.png */; };
+		40AFE7B51A83EE22004F28F7 /* RunsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFE7B41A83EE22004F28F7 /* RunsViewController.swift */; };
+		40AFE7B61A83EE22004F28F7 /* RunsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFE7B41A83EE22004F28F7 /* RunsViewController.swift */; };
 		8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */; };
 		8250F7311A6A5AB1007962C3 /* RunnerApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */; };
 		8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8250F7321A6A5AB1007962C3 /* ViewController.swift */; };
@@ -125,6 +127,7 @@
 		24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedometerStyleKit.swift; path = art/SpeedometerStyleKit.swift; sourceTree = "<group>"; };
 		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		40AFE7B21A81527C004F28F7 /* circle_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle_main.png; path = art/images/circle_main.png; sourceTree = "<group>"; };
+		40AFE7B41A83EE22004F28F7 /* RunsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsViewController.swift; sourceTree = "<group>"; };
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250F72C1A6A5AB1007962C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 				8250F7531A6B480F007962C3 /* RunController.swift */,
 				24950AA21A8069860062C9EA /* CoreDataController.swift */,
 				8250F7341A6A5AB1007962C3 /* Main.storyboard */,
+				40AFE7B41A83EE22004F28F7 /* RunsViewController.swift */,
 				24950AB21A8095350062C9EA /* MapViewController.swift */,
 				8250F7391A6A5AB1007962C3 /* LaunchScreen.xib */,
 				8250F72F1A6A5AB1007962C3 /* RunnerApp.xcdatamodeld */,
@@ -405,10 +409,10 @@
 					};
 					8250F7271A6A5AB1007962C3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 8KV53E363M;
+						DevelopmentTeam = W23JT3HF49;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -510,6 +514,7 @@
 				24950AA31A8069860062C9EA /* CoreDataController.swift in Sources */,
 				8250F7541A6B4810007962C3 /* RunController.swift in Sources */,
 				24C512791A7F01FD0084AE24 /* SpeedometerStyleKit.swift in Sources */,
+				40AFE7B51A83EE22004F28F7 /* RunsViewController.swift in Sources */,
 				8250F7511A6A5AFB007962C3 /* LocationController.swift in Sources */,
 				8250F7331A6A5AB1007962C3 /* ViewController.swift in Sources */,
 				8250F72E1A6A5AB1007962C3 /* AppDelegate.swift in Sources */,
@@ -531,6 +536,7 @@
 				8250F7551A6B4810007962C3 /* RunController.swift in Sources */,
 				24950AA71A8075F70062C9EA /* CoreDataController.swift in Sources */,
 				8250F7521A6A5AFB007962C3 /* LocationController.swift in Sources */,
+				40AFE7B61A83EE22004F28F7 /* RunsViewController.swift in Sources */,
 				24950AB71A80BD5A0062C9EA /* SpeedometerStyleKit.swift in Sources */,
 				24950AAE1A8084D70062C9EA /* RunnerApp.swift in Sources */,
 				24950AB91A80BD600062C9EA /* Labels.swift in Sources */,
@@ -603,6 +609,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -625,6 +632,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
