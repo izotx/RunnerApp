@@ -11,10 +11,10 @@ import CoreData
 @objc(Location)
 class Location: NSManagedObject {
 
-    @NSManaged var latitude: NSNumber
-    @NSManaged var longitude: NSNumber
-    @NSManaged var speed: NSNumber
-    @NSManaged var timestamp: NSDate
+    @NSManaged var latitude: NSNumber?
+    @NSManaged var longitude: NSNumber?
+    @NSManaged var speed: NSNumber?
+    @NSManaged var timestamp: NSDate?
     @NSManaged var run: Run
 
 }

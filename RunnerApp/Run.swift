@@ -11,10 +11,10 @@ import CoreData
 @objc(Run)
 class Run: NSManagedObject {
 
-    @NSManaged var averagespeed: NSNumber
-    @NSManaged var distance: NSNumber
-    @NSManaged var started: NSDate
-    @NSManaged var time: NSNumber
-    @NSManaged var locations: NSOrderedSet
+    @NSManaged var averagespeed: NSNumber?
+    @NSManaged var distance: NSNumber?
+    @NSManaged var started: NSDate?
+    @NSManaged var time: NSNumber?
+    @NSManaged var locations: NSOrderedSet?
 
 }

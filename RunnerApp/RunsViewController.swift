@@ -46,22 +46,31 @@ class RunsViewController:UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell =  tableView.dequeueReusableCellWithIdentifier("runid") as
-        RunCell
+        var cell =  tableView.dequeueReusableCellWithIdentifier("runid") as RunCell
 
         var run = runs[indexPath.row]
-
-        cell.distance.text = "\(round(10.0 * run.distance.doubleValue)/(10.0 * lengths.mile.rawValue)) miles"
-        let formatter = NSDateFormatter()
+        if let nr = run.distance {
+            var d = nr as NSNumber
+            var distance : Float = d.floatValue
+            var initial = distance / Float(lengths.mile.rawValue)
+            
+            cell.distance.text = "\(round(initial * 10.0)/10.0 ) miles"
+        }
+        
+        
+                let formatter = NSDateFormatter()
         formatter.timeStyle = .ShortStyle
         formatter.dateStyle = .ShortStyle
         
-        var stringValue = formatter.stringFromDate(run.started)
-        cell.date.text = "\(stringValue)"
-        println(cell.date.text)
         
-        cell.time.text = "\(RunController.convertTimeToText(run.time.integerValue))"
-        
+        if let start = run.started  {
+            var stringValue = formatter.stringFromDate(start)
+            cell.date.text = "\(stringValue)"
+            println(cell.date.text)
+        }
+        if let time = run.time {
+            cell.time.text = "\(RunController.convertTimeToText(time.integerValue))"
+        }
         return cell
     }
     

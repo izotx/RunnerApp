@@ -126,6 +126,7 @@
 		24C512761A7EEE100084AE24 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		24C512781A7F01FD0084AE24 /* SpeedometerStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeedometerStyleKit.swift; path = art/SpeedometerStyleKit.swift; sourceTree = "<group>"; };
 		24D1B2811A775203006D03B3 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		24FED6AB1A84726F00022A95 /* RunnerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RunnerApp.entitlements; sourceTree = "<group>"; };
 		40AFE7B21A81527C004F28F7 /* circle_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circle_main.png; path = art/images/circle_main.png; sourceTree = "<group>"; };
 		40AFE7B41A83EE22004F28F7 /* RunsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsViewController.swift; sourceTree = "<group>"; };
 		8250F7281A6A5AB1007962C3 /* RunnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +144,6 @@
 		8250F7561A6B501F007962C3 /* RunnerApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		8250F7571A6B501F007962C3 /* RunnerAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunnerAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		82EBFD5B1A6BF0F000AC002F /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
-		82EBFD801A6BF78D00AC002F /* RunnerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RunnerApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +246,7 @@
 		8250F72A1A6A5AB1007962C3 /* RunnerApp */ = {
 			isa = PBXGroup;
 			children = (
-				82EBFD801A6BF78D00AC002F /* RunnerApp.entitlements */,
+				24FED6AB1A84726F00022A95 /* RunnerApp.entitlements */,
 				8250F72D1A6A5AB1007962C3 /* AppDelegate.swift */,
 				8250F7501A6A5AFB007962C3 /* LocationController.swift */,
 				8250F7321A6A5AB1007962C3 /* ViewController.swift */,
@@ -409,7 +409,7 @@
 					};
 					8250F7271A6A5AB1007962C3 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = W23JT3HF49;
+						DevelopmentTeam = 8KV53E363M;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -690,7 +690,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Janusz Chudzynski (ZJ65ELZNVA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -755,10 +755,9 @@
 		8250F74B1A6A5AB1007962C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -775,10 +774,9 @@
 		8250F74C1A6A5AB1007962C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = RunnerApp/RunnerApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;

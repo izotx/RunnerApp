@@ -25,10 +25,8 @@ class ViewController: UIViewController, RunProtocol {
     @IBOutlet weak var mapButtonOutlet: mphButton!
     @IBOutlet weak var historyButton: mphButton!
   
-
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-      
     }
     
     @IBAction func showHistory(sender: AnyObject) {
@@ -37,7 +35,6 @@ class ViewController: UIViewController, RunProtocol {
                 "runHistory") as? RunsViewController}
 
         self.presentViewController(self.runHistory!, animated: true) { () -> Void in
-            
         }
     }
 
@@ -47,8 +44,7 @@ class ViewController: UIViewController, RunProtocol {
             
             self.presentViewController(
             vc, animated: true) { () -> Void in
-          
-                
+   
             }
         }
     }
@@ -120,12 +116,9 @@ class ViewController: UIViewController, RunProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         self.runController.addRunObserver(self)
         mapController = storyboard!.instantiateViewControllerWithIdentifier(
             "map") as? MapViewController
-        
-        
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named:"pattern")!)
         //set default values
@@ -136,11 +129,9 @@ class ViewController: UIViewController, RunProtocol {
         self.distanceView.bottomText = "km"
         self.mapButtonOutlet.text = "Map"
         self.historyButton.text = "Runs"
-
         self.speedometer.alpha = 0
         self.timer.alpha = 0
         self.distanceView.alpha = 0
-        
         self.startRun(self)
 
     }
@@ -189,8 +180,8 @@ class ViewController: UIViewController, RunProtocol {
         self.runController.changeMeasurements()
         //change the measurements
 
-        speedUpdated("\(self.runController.calculateSpeed(self.runController.speed))")
-        distanceUpdated("\(self.runController.getDistance(self.runController.distance))")
+        speedUpdated("\(RunController.calculateSpeed(self.runController.speed,mode:self.runController.speedMode))")
+        distanceUpdated("\(RunController.getDistance(self.runController.distance, mode:self.runController.speedMode))")
         
         
            if(self.runController.speedMode == measurements.kph){

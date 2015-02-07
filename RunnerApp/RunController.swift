@@ -65,12 +65,12 @@ class RunController: NSObject {
         self.observers.append(observer)
     }
     
-    func getDistance(rawDistance:Double)->String{
-        var km = round (100 * self.distance/lengths.km.rawValue )/100
-        var miles = round (100 * self.distance/lengths.mile.rawValue )/100
+    class func getDistance(rawDistance:Double, mode:measurements)->String{
+        var km = round (100 * rawDistance/lengths.km.rawValue )/100
+        var miles = round (100 * rawDistance/lengths.mile.rawValue )/100
         
         var displayText = ""
-        if(self.speedMode == measurements.kph)
+        if(mode == measurements.kph)
         {
             displayText = "\(km)"
         }
@@ -99,10 +99,7 @@ class RunController: NSObject {
         locationController.addObserver(self, forKeyPath: "speed", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "distanceDelta", options:.New , context: nil)
         locationController.addObserver(self, forKeyPath: "currentLocation", options:.New , context: nil)
-    
-        
-        
-        
+
         self.addObserver(self, forKeyPath: "state", options:.New , context: nil)
         self.locationController.startUpdating();
         
@@ -138,6 +135,7 @@ class RunController: NSObject {
     func timerTick()->Void
     {
         self.time += 1
+         dataManager.updateTime(self.time)
         var displayText = RunController.convertTimeToText(self.time)
 
         for observer in self.observers {
@@ -173,8 +171,8 @@ class RunController: NSObject {
           self.locationController.startUpdating();
     }
 
-    func calculateSpeed(speed: Double)->Double{
-            switch self.speedMode {
+    class func calculateSpeed(speed: Double, mode:measurements )->Double{
+            switch mode {
         case measurements.kph:
             return round(10 * speed * 3600.0 / lengths.km.rawValue) / 10
 
@@ -248,7 +246,7 @@ class RunController: NSObject {
             //update speed
             var rawSpeed: Double  = change[NSKeyValueChangeNewKey] as Double
             self.speed = rawSpeed
-            var localizedSpeed = calculateSpeed(self.speed)
+            var localizedSpeed = RunController.calculateSpeed(self.speed, mode:self.speedMode)
           
             var displayText = "\(localizedSpeed)"
             
@@ -267,7 +265,7 @@ class RunController: NSObject {
                 dataManager.updateDistance(self.distance)
             
             for observer in self.observers {
-                observer.distanceUpdated(getDistance(self.distance))
+                observer.distanceUpdated(RunController.getDistance(self.distance,mode: self.speedMode))
             }
         }
         if(keyPath == "state"){
